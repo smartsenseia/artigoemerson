@@ -1,0 +1,284 @@
+\begin{thebibliography}{43}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Al-Obaidani et~al.(2008)Al-Obaidani, Curcio, Macedonio, Di~Profio,
+  Al-Hinai, and Drioli]{AlObaidani2008}
+S.~Al-Obaidani, E.~Curcio, F.~Macedonio, G.~Di~Profio, H.~Al-Hinai, and
+  E.~Drioli.
+\newblock Potential of membrane distillation in seawater desalination: thermal
+  efficiency, sensitivity study and cost estimation.
+\newblock \emph{Journal of Membrane Science}, 323\penalty0 (1):\penalty0
+  85--98, 2008.
+
+\bibitem[Alkhudhiri et~al.(2012)Alkhudhiri, Darwish, and Hilal]{Alkhudhiri2012}
+A.~Alkhudhiri, N.~Darwish, and N.~Hilal.
+\newblock Membrane distillation: A comprehensive review.
+\newblock \emph{Desalination}, 287:\penalty0 2--18, 2012.
+
+\bibitem[Charcosset(2009)]{Charcosset2009}
+C.~Charcosset.
+\newblock A review of membrane processes and renewable energies for
+  desalination.
+\newblock \emph{Desalination}, 245:\penalty0 214--231, 2009.
+
+\bibitem[Christie et~al.(2020)Christie, Horseman, and Lin]{Christie2020}
+K.~S.~S. Christie, T.~Horseman, and S.~Lin.
+\newblock Energy efficiency of membrane distillation: simplified analysis, heat
+  recovery and the use of waste-heat.
+\newblock \emph{Environment International}, 138:\penalty0 105588, 2020.
+
+\bibitem[Curcino et~al.(2022)Curcino, {Costa J{\'u}nior}, {C{\'a}rdenas
+  G{\'o}mez}, {Pe{\~n}aranda Chenche}, Lima, Naveira-Cotta, and
+  Cotta]{Curcino2022}
+I.~V. Curcino, P.~R.~S. {Costa J{\'u}nior}, A.~O. {C{\'a}rdenas G{\'o}mez},
+  L.~E. {Pe{\~n}aranda Chenche}, J.~A. Lima, C.~P. Naveira-Cotta, and R.~M.
+  Cotta.
+\newblock Analysis of effective thermal conductivity and tortuosity modeling in
+  membrane distillation simulation.
+\newblock \emph{Micro and Nano Engineering}, 17:\penalty0 100165, 2022.
+
+\bibitem[Curcio and Drioli(2005)]{Curcio2005}
+E.~Curcio and E.~Drioli.
+\newblock Membrane distillation and related operations -- a review.
+\newblock \emph{Separation and Purification Reviews}, 34:\penalty0 35--86,
+  2005.
+
+\bibitem[Drioli et~al.(2015)Drioli, Ali, and Macedonio]{Drioli2015}
+E.~Drioli, A.~Ali, and F.~Macedonio.
+\newblock Membrane distillation: Recent developments and perspectives.
+\newblock \emph{Desalination}, 356:\penalty0 56--84, 2015.
+
+\bibitem[Elimelech and Phillip(2011)]{Elimelech2011}
+M.~Elimelech and W.~A. Phillip.
+\newblock The future of seawater desalination: Energy, technology and the
+  environment.
+\newblock \emph{Science}, 333:\penalty0 712--717, 2011.
+
+\bibitem[Fan and Peng(2012)]{Fan2012}
+H.~Fan and Y.~Peng.
+\newblock Application of symmetric {PVDF} membranes in desalination and
+  comparison of the {VMD} and {DCMD} processes.
+\newblock \emph{Chemical Engineering Science}, 79:\penalty0 94--102, 2012.
+
+\bibitem[Garc{\'i}a-Payo and Izquierdo-Gil(2004)]{GarciaPayo2004}
+M.~C. Garc{\'i}a-Payo and M.~A. Izquierdo-Gil.
+\newblock Thermal resistance technique for measuring the thermal conductivity
+  of thin microporous membranes.
+\newblock \emph{Journal of Physics D: Applied Physics}, 37\penalty0
+  (21):\penalty0 3008--3016, 2004.
+\newblock \doi{10.1088/0022-3727/37/21/011}.
+
+\bibitem[Ghanbarian et~al.(2013)Ghanbarian, Hunt, Ewing, and
+  Sahimi]{Ghanbarian2013}
+B.~Ghanbarian, A.~G. Hunt, R.~P. Ewing, and M.~Sahimi.
+\newblock Tortuosity in porous media: a critical review.
+\newblock \emph{Soil Science Society of America Journal}, 77:\penalty0
+  1461--1477, 2013.
+
+\bibitem[Gilron et~al.(2007)Gilron, Song, and Sirkar]{Gilron2007}
+J.~Gilron, L.~M. Song, and K.~K. Sirkar.
+\newblock Design of cascade of crossflow direct contact membrane distillation.
+\newblock \emph{Industrial \& Engineering Chemistry Research}, 46\penalty0
+  (8):\penalty0 2324--2334, 2007.
+
+\bibitem[Gonzalez-Bravo et~al.(2015)Gonzalez-Bravo, Elsayed, Ponce-Ortega,
+  Napoles-Rivera, and El-Halwagi]{GonzalezBravo2015}
+R.~Gonzalez-Bravo, N.~A. Elsayed, J.~M. Ponce-Ortega, F.~Napoles-Rivera, and
+  M.~M. El-Halwagi.
+\newblock Optimal design of thermal membrane distillation systems with heat
+  integration with process plants.
+\newblock \emph{Applied Thermal Engineering}, 75:\penalty0 154--166, 2015.
+
+\bibitem[Gostoli and Sarti(1998)]{Gostoli1998}
+C.~Gostoli and G.~C. Sarti.
+\newblock Low temperature distillation through hydrophobic membrane.
+\newblock \emph{Separation Science and Technology}, 22\penalty0
+  (2--3):\penalty0 855--872, 1998.
+
+\bibitem[Guan et~al.(2014)Guan, Yang, Wang, Field, and Fane]{Guan2014}
+G.~Guan, X.~Yang, R.~Wang, R.~Field, and A.~G. Fane.
+\newblock Evaluation of hollow fiber-based direct contact and vacuum membrane
+  distillation systems using {A}spen process simulation.
+\newblock \emph{Journal of Membrane Science}, 464:\penalty0 127--139, 2014.
+
+\bibitem[Guan et~al.(2015)Guan, Yang, Wang, and Fane]{Guan2015}
+G.~Guan, X.~Yang, R.~Wang, and A.~G. Fane.
+\newblock Evaluation of heat utilization in membrane desalination system
+  integrated with heat recovery.
+\newblock \emph{Desalination}, 366:\penalty0 80--93, 2015.
+
+\bibitem[Hausmann et~al.(2012)Hausmann, Sanciolo, Vasiljevic, Weeks, and
+  Duke]{Hausmann2012}
+A.~Hausmann, P.~Sanciolo, T.~Vasiljevic, M.~Weeks, and M.~Duke.
+\newblock Integration of membrane distillation into heat paths of industrial
+  processes.
+\newblock \emph{Chemical Engineering Journal}, 211--212:\penalty0 378--387,
+  2012.
+
+\bibitem[{IMSL Fortran Math Library}(2022)]{IMSL2022}
+{IMSL Fortran Math Library}.
+\newblock \emph{{IMSL} {F}ortran {M}ath {L}ibrary}.
+\newblock Perforce/Rogue Wave Software, Minneapolis, 2022.
+
+\bibitem[Khayet and Matsuura(2011)]{Khayet2011}
+M.~S. Khayet and T.~Matsuura.
+\newblock \emph{Membrane Distillation: Principles and Applications}.
+\newblock Elsevier, Amsterdam, 2011.
+
+\bibitem[Khayet et~al.(2000)Khayet, Godino, and Mengual]{Khayet2000}
+M.~S. Khayet, P.~Godino, and J.~I. Mengual.
+\newblock Theory and experiments on sweeping gas membrane distillation.
+\newblock \emph{Journal of Membrane Science}, 165:\penalty0 261--272, 2000.
+
+\bibitem[Khayet et~al.(2006)Khayet, Matsuura, Mengual, and
+  Qtaishat]{Khayet2006}
+M.~S. Khayet, T.~Matsuura, J.~I. Mengual, and M.~Qtaishat.
+\newblock Design of novel direct contact membrane distillation membranes.
+\newblock \emph{Desalination}, 192\penalty0 (1--3):\penalty0 105--111, 2006.
+
+\bibitem[Kim(2014)]{Kim2014}
+A.~S. Kim.
+\newblock Cylindrical cell model for direct contact membrane distillation
+  ({DCMD}) of densely packed hollow fibers.
+\newblock \emph{Journal of Membrane Science}, 455:\penalty0 168--186, 2014.
+
+\bibitem[Kim et~al.(2021)Kim, Campanella, and Heldman]{Kim2021}
+W.-J. Kim, O.~Campanella, and D.~R. Heldman.
+\newblock Predicting the performance of direct contact membrane distillation
+  ({DCMD}): Mathematical determination of appropriate tortuosity based on
+  porosity.
+\newblock \emph{Journal of Food Engineering}, 294:\penalty0 110400, 2021.
+
+\bibitem[Kim et~al.(2015)Kim, Thu, and Choi]{Kim2015}
+Y.~D. Kim, K.~Thu, and S.~H. Choi.
+\newblock Solar-assisted multi-stage vacuum membrane distillation system with
+  heat recovery unit.
+\newblock \emph{Desalination}, 367:\penalty0 161--171, 2015.
+
+\bibitem[Lawson and Lloyd(1997)]{Lawson1997}
+K.~W. Lawson and D.~R. Lloyd.
+\newblock Membrane distillation.
+\newblock \emph{Journal of Membrane Science}, 124:\penalty0 1--25, 1997.
+
+\bibitem[Lee et~al.(2011)Lee, He, Song, and Sirkar]{Lee2011}
+H.~Y. Lee, F.~He, L.~M. Song, and K.~K. Sirkar.
+\newblock Desalination with a cascade of crossflow hollow fiber membrane
+  distillation devices integrated with a heat exchanger.
+\newblock \emph{AIChE Journal}, 54\penalty0 (7):\penalty0 1780--1795, 2011.
+
+\bibitem[Li et~al.(2014)Li, Peng, Dong, Han, Chen, Qiu, and Jiang]{Li2014}
+Z.~Li, Y.~Peng, Y.~Dong, H.~Han, P.~Chen, L.~Qiu, and Q.~Jiang.
+\newblock Effects of thermal efficiency in {DCMD} and the preparation of
+  membranes with low thermal conductivity.
+\newblock \emph{Applied Surface Science}, 317:\penalty0 338--349, 2014.
+
+\bibitem[Lin et~al.(2014)Lin, Yip, and Elimelech]{Lin2014}
+S.~Lin, N.~Y. Yip, and M.~Elimelech.
+\newblock Direct contact membrane distillation with heat recovery:
+  thermodynamic insights from module scale modeling.
+\newblock \emph{Journal of Membrane Science}, 453:\penalty0 498--515, 2014.
+
+\bibitem[Lisboa et~al.(2021)Lisboa, Moraes, Naveira-Cotta, and
+  Cotta]{Lisboa2021}
+K.~M. Lisboa, D.~B. Moraes, C.~P. Naveira-Cotta, and R.~M. Cotta.
+\newblock Analysis of the membrane effects on the energy efficiency of water
+  desalination in a direct contact membrane distillation ({DCMD}) system with
+  heat recovery.
+\newblock \emph{Applied Thermal Engineering}, 182:\penalty0 116063, 2021.
+
+\bibitem[Lu and Chen(2012)]{Lu2012}
+Y.~Lu and J.~Chen.
+\newblock Integration design of heat exchanger networks into membrane
+  distillation systems to save energy.
+\newblock \emph{Industrial \& Engineering Chemistry Research}, 51:\penalty0
+  6798--6810, 2012.
+
+\bibitem[Maheswari et~al.(2015)Maheswari, Kalidasa~Murugavel, and
+  Esakkimuthu]{Maheswari2015}
+K.~S. Maheswari, K.~Kalidasa~Murugavel, and G.~Esakkimuthu.
+\newblock Thermal desalination using diesel engine exhaust waste heat -- an
+  experimental analysis.
+\newblock \emph{Desalination}, 358:\penalty0 94--100, 2015.
+
+\bibitem[Sampaio(2022)]{Sampaio2022}
+P.~A.~B. Sampaio.
+\newblock Computational model and simulation of {DCMD} desalination systems
+  with heat recovery.
+\newblock \emph{Desalination}, 533:\penalty0 115769, 2022.
+
+\bibitem[Sharqawy et~al.(2010)Sharqawy, Lienhard, and Zubair]{Sharqawy2010}
+M.~H. Sharqawy, J.~H. Lienhard, and S.~M. Zubair.
+\newblock The thermophysical properties of seawater: A review of existing
+  correlations and data.
+\newblock \emph{Desalination and Water Treatment}, 16:\penalty0 354--380, 2010.
+
+\bibitem[Sparrow(2003)]{Sparrow2003}
+B.~S. Sparrow.
+\newblock Empirical equations for the thermodynamic properties of aqueous
+  sodium chloride.
+\newblock \emph{Desalination}, 159:\penalty0 161--170, 2003.
+
+\bibitem[Swaminathan and Lienhard(2018)]{SwaminathanLienhard2018}
+J.~Swaminathan and J.~H. Lienhard, V.
+\newblock Design and operation of membrane distillation with feed recirculation
+  for high recovery brine concentration.
+\newblock \emph{Desalination}, 445:\penalty0 51--62, 2018.
+
+\bibitem[Swaminathan et~al.(2018)Swaminathan, Chung, Warsinger, and
+  Lienhard~V]{Swaminathan2018}
+J.~Swaminathan, H.~W. Chung, D.~M. Warsinger, and J.~H. Lienhard~V.
+\newblock Energy efficiency of membrane distillation up to high salinity:
+  Evaluating critical system size and optimal membrane thickness.
+\newblock \emph{Applied Energy}, 211:\penalty0 715--734, 2018.
+
+\bibitem[Veiga(2017)]{Veiga2017}
+H.~P. Veiga.
+\newblock Encontros tem{\'a}ticos -- saneamento ambiental: Desafios e
+  solu{\c{c}}{\~o}es.
+\newblock Technical report, ABES-RS, Minist{\'e}rio do Meio Ambiente, Porto
+  Alegre/RS, Brazil, 2017.
+
+\bibitem[Wang et~al.(2008)Wang, Chung, and Gryta]{Wang2008}
+K.~Y. Wang, T.~S. Chung, and M.~Gryta.
+\newblock Hydrophobic {PVDF} hollow fiber membranes with narrow pore size
+  distribution and ultra-thin skin for the fresh water production through
+  membrane distillation.
+\newblock \emph{Chemical Engineering Science}, 63\penalty0 (9):\penalty0
+  2587--2594, 2008.
+
+\bibitem[Wang et~al.(2009)Wang, Foo, and Chung]{Wang2009}
+K.~Y. Wang, S.~W. Foo, and T.~S. Chung.
+\newblock Mixed matrix {PVDF} hollow fiber membranes with nanoscale pores for
+  desalination through direct contact membrane distillation.
+\newblock \emph{Industrial \& Engineering Chemistry Research}, 48:\penalty0
+  4474--4483, 2009.
+
+\bibitem[Yang et~al.(2011)Yang, Wang, Shi, Fane, and Debowski]{Yang2011}
+X.~Yang, R.~Wang, L.~Shi, A.~G. Fane, and M.~Debowski.
+\newblock Performance improvement of {PVDF} hollow fiber-based membrane
+  distillation process.
+\newblock \emph{Journal of Membrane Science}, 369:\penalty0 437--447, 2011.
+
+\bibitem[Yao et~al.(2013)Yao, Qin, and Yuan]{Yao2013}
+K.~Yao, Y.~Qin, and Y.~Yuan.
+\newblock A continuous-effect membrane distillation process based on hollow
+  fiber {AGMD} module with internal latent-heat recovery.
+\newblock \emph{AIChE Journal}, 59:\penalty0 1278--1297, 2013.
+
+\bibitem[Zhang et~al.(2010)Zhang, Li, Duke, Xie, and Gray]{Zhang2010}
+J.~Zhang, J.~Li, M.~Duke, Z.~Xie, and S.~Gray.
+\newblock Performance of asymmetrical hollow fiber membranes in membrane
+  distillation under various configurations and vacuum enhancement.
+\newblock \emph{Journal of Membrane Science}, 362:\penalty0 517--528, 2010.
+
+\bibitem[Zhang et~al.(2015)Zhang, Peng, Ji, Li, and Chen]{Zhang2015}
+Y.~Zhang, Y.~Peng, S.~Ji, Z.~Li, and P.~Chen.
+\newblock Review of thermal efficiency and heat recycling in membrane
+  distillation processes.
+\newblock \emph{Desalination}, 367:\penalty0 223--239, 2015.
+
+\end{thebibliography}

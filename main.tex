@@ -1,0 +1,1263 @@
+\documentclass[14pt,letterpaper,fleqn]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{natbib}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{nomencl}
+\usepackage{url}
+\usepackage{adjustbox}
+
+\geometry{
+  top=2.5cm,
+  bottom=2.5cm,
+  left=3cm,
+  right=3cm
+}
+
+\setlength{\mathindent}{0pt}
+
+\onehalfspacing
+
+% ----------------------------------------------------------------
+\begin{document}
+
+% ----------------------------------------------------------------
+\begin{center}
+  {\Large\bfseries Evaluating the efficiency and water recovery of direct contact
+  membrane distillation (DCMD) systems with dual heat recovery and
+  recirculation of retentate and permeate}
+
+  \vspace{1em}
+
+  Emerson B.\ dos Anjos$^{1,*}$,
+  Abdul O.\ Cárdenas Gómez$^{1}$,
+  Luz Elena P.\ Chenche$^{1}$,
+  João A.\ Lima$^{1,2}$,
+  Carolina P.\ Naveira-Cotta$^{1}$,
+  Renato M.\ Cotta$^{1,3}$,
+  Kleber M.\ Lisboa$^{4}$
+
+  \vspace{0.8em}
+
+  \small
+  $^{1}$\textit{Laboratory of Nano \& Microfluidics and Microsystems -- LabMEMS,
+    Mechanical Engineering Department, POLI \& COPPE/UFRJ,
+    Federal University of Rio de Janeiro, Rio de Janeiro/RJ, Brazil}\\[0.3em]
+  $^{2}$\textit{Renewable Energy Engineering Department, DEER/CEAR,
+    Federal University of Paraíba, João Pessoa/PB, Brazil}\\[0.3em]
+  $^{3}$\textit{General Directorate of Nuclear and Technological Development,
+    DGDNTM, Brazilian Navy, Rio de Janeiro/RJ, Brazil}\\[0.3em]
+  $^{4}$\textit{Laboratory of Thermal Sciences (LATERMO),
+    Department of Mechanical Engineering -- TEM/UFF,
+    Universidade Federal Fluminense, Niterói/RJ, Brazil}\\[0.5em]
+  $^{*}$Corresponding author: \href{mailto:emersonbanjos@coppe.ufrj.br}{emersonbanjos@coppe.ufrj.br}
+\end{center}
+
+% ----------------------------------------------------------------
+\begin{abstract}
+A transient model for hollow-fiber direct contact membrane distillation (DCMD) modules
+is employed to evaluate a desalination plant in six modes of operation, namely batch,
+semi-batch, volume-control, salinity-control, continuous, and steady state. The main
+goal is to reveal DCMD desalination configurations that present the best compromise
+between maximum energy efficiency and minimum use of brackish water from wells, mainly
+focusing on applications in sites under hydrological stress, like in the semi-arid
+Brazilian northeastern region. The obtained results indicate that using an additional
+heat exchanger for heat regeneration, combined with recirculation of the retentate
+stream, enhances the system efficiency compared to a scenario that uses only the
+distillate heat recovery. Additionally, the results also showed that if the main
+interest is in obtaining high recovery ratios (high volume of produced distillate water
+per volume of brackish water), the recirculating semi-batch and volume-controlling
+operating modes are the best alternatives to produce distillated water. However, if
+the interest is to minimize the thermal energy cost, the best option is the batch
+operating mode.
+
+\medskip
+\noindent\textbf{Keywords:} Desalination; DCMD system; heat recovery; retentate recirculation;
+energy efficiency.
+\end{abstract}
+
+\definecolor{headerblue}{RGB}{210, 225, 245}
+\definecolor{sectiongray}{RGB}{235, 235, 235}
+
+\newpage
+\section*{Nomenclature}
+
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\setlength{\arrayrulewidth}{0.6pt}
+
+% ---- PAGE 1: Latin Symbols + Greek Symbols ----
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{1.8cm}|p{5.5cm}||p{1.8cm}|p{5.5cm}|}
+\hline
+\multicolumn{2}{|l||}{\textbf{Latin Symbols (a--m)}} &
+\multicolumn{2}{l|}{\textbf{Latin Symbols (n--z)}} \\
+\hline
+\textbf{Symbol} & \textbf{Description} &
+\textbf{Symbol} & \textbf{Description} \\
+\hline
+$a$        & Specific surface area &
+$N$        & Molar flux \\
+\hline
+$c_p$      & Specific heat at constant pressure &
+$N_{fbr}$  & Number of fibers in the vessel \\
+\hline
+$C$        & Thermal capacity &
+$Nu$       & Nusselt number \\
+\hline
+$C_s$      & Salt concentration &
+$p$        & Pressure \\
+\hline
+$d$        & Diameter &
+$Pr$       & Prandtl number \\
+\hline
+$D$        & Diffusivity / diffusion coefficient &
+$q_c$      & Heat transferred to the cold sink \\
+\hline
+$f$        & Friction factor &
+$q_h$      & Heat transferred from the hot source \\
+\hline
+$h$        & Convective heat transfer coefficient &
+$q_{HX}$   & Heat transferred in the heat exchanger \\
+\hline
+$h_{fg}$   & Enthalpy / heat of vaporization &
+$Q$        & Rate of heat transfer \\
+\hline
+$j_{wl}$   & Distillate flow rate &
+$r$        & Radius \\
+\hline
+$k$        & Thermal conductivity &
+$R$        & Universal gas constant \\
+\hline
+$L$        & Hollow-fiber module length &
+$Re$       & Reynolds number \\
+\hline
+$m$        & Mass &
+$T$        & Temperature \\
+\hline
+$\dot{m}$  & Mass flow rate &
+$V$        & Volume \\
+\hline
+$M$        & Molar mass &
+$\dot{V}$  & Volumetric flow rate \\
+\hline
+           &  &
+$u$        & Stream velocity \\
+\hline
+           &  &
+$z$        & Position along the module \\
+\hline
+\multicolumn{2}{|l||}{\textbf{Greek Symbols}} &
+\multicolumn{2}{l|}{\textbf{Subscripts / Superscripts}} \\
+\hline
+\textbf{Symbol} & \textbf{Description} &
+\textbf{Symbol} & \textbf{Description} \\
+\hline
+$\alpha$           & Membrane effectiveness (salt) &
+$a$                & Relative to air \\
+\hline
+$\gamma$           & Relative to lumen or shell phase &
+$amb$              & Relative to environment \\
+\hline
+$\delta$           & Membrane thickness &
+$col$              & Relative to collector tank \\
+\hline
+$\varepsilon$      & Porosity &
+$dist$             & Relative to distillate \\
+\hline
+$\varepsilon_{HX}$ & Heat exchanger efficacy &
+$e$                & Relative to inlet \\
+\hline
+$\eta$             & Efficiency &
+$ext$              & Relative to external \\
+\hline
+$\lambda$          & Rejection fraction, retentate stream &
+$l$                & Relative to lumen \\
+\hline
+$\mu$              & Dynamic viscosity &
+$m/memb$           & Relative to membrane \\
+\hline
+$\rho$             & Density &
+$mix$              & Relative to mixture \\
+\hline
+$\tau$             & Tortuosity &
+$o$                & Relative to outlet \\
+\hline
+$\phi$             & Salinity &
+$s$                & Relative to shell \\
+\hline
+                   &  &
+$vap$              & Relative to vapor \\
+\hline
+                   &  &
+$w$                & Relative to water \\
+\hline
+                   &  &
+$well$             & Relative to well \\
+\hline
+                   &  &
+$\bar{(\cdot)}$    & Indicates averaged value \\
+\hline
+\end{tabular}
+}
+
+\newpage
+
+% ---- PAGE 2: Acronyms ----
+\section*{Nomenclature (continued)}
+
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{1.8cm}|p{5.5cm}||p{1.8cm}|p{5.5cm}|}
+\hline
+\multicolumn{4}{|l|}{\textbf{Acronyms}} \\
+\hline
+\textbf{Symbol} & \textbf{Description} &
+\textbf{Symbol} & \textbf{Description} \\
+\hline
+AGMD    & Air Gap Membrane Distillation &
+PGMD    & Permeate Gap Membrane Distillation \\
+\hline
+CGMD    & Conductive Gap Membrane Distillation &
+RO      & Reverse Osmosis \\
+\hline
+DCMD    & Direct Contact Membrane Distillation &
+RR      & Recovery Ratio \\
+\hline
+DLR     & Distillate Limiting Ratio &
+SEC     & Specific Energy Consumption \\
+\hline
+GOR     & Gained Output Ratio &
+SGMD    & Sweeping Gas Membrane Distillation \\
+\hline
+FLR     & Feed Limiting Ratio &
+V-AGMD  & Vacuum Air Gap Membrane Distillation \\
+\hline
+HICO    & Hot In, Cold Out &
+VMD     & Vacuum Membrane Distillation \\
+\hline
+HOCI    & Hot Out, Cold In &
+        &  \\
+\hline
+HX      & Heat Exchanger &
+        &  \\
+\hline
+MD      & Membrane Distillation &
+        &  \\
+\hline
+\end{tabular}
+}
+
+\clearpage
+% ----------------------------------------------------------------
+\section{Introduction}
+
+Freshwater scarcity, mainly due to population growth, has attracted the attention of
+researchers and industry for the development and improvement of techniques for the
+treatment, purification, and desalination of salt water. Among the main desalination
+techniques, those involving thermal separation methods, such as membrane distillation,
+require more energy due to the need to vaporize the water since the water vaporization
+enthalpy is about 2{,}400~kJ/kg \citep{Sharqawy2010}, while Gibbs free energy for
+seawater, which governs the energy use of the reverse osmosis method, is 2.7~kJ/kg
+\citep{Elimelech2011}. Therefore, one of the challenges that must be overcome for the
+application of thermal methods such as membrane distillation (MD) in water desalination,
+which aims to be competitive against the conventionally employed reverse osmosis (RO)
+process in small and medium-sized systems ($<100$~m$^3$/day of water produced), is to
+minimize the demand for thermal energy, improving thermal efficiency.
+
+The membrane distillation process enables the use of residual heat from other thermal
+processes or the heat available from renewable sources, such as solar collectors.
+However, heat losses by conduction through the membrane further increase the thermal
+consumption, which, when added to high-water consumption, limits the large-scale use of
+these systems \citep{Khayet2011}. Nevertheless, according to \citet{Guan2015}, when
+compared to conventional desalination processes, such as multi-stage flash distillation,
+multi-effect distillation, and reverse osmosis, the MD process has several benefits:
+low salinity sensitivity and high salt rejection (100\% content, theoretically), low
+membrane vulnerability to fouling, greater performance under low severity operating
+conditions, and the viability of using low-grade waste heat from other thermal processes
+or renewable sources, such as solar collectors, as previously mentioned
+\citep{Curcio2005, Charcosset2009, Drioli2015}.
+
+Concerning its technology, according to the method of obtaining the vapor pressure
+gradient through the membrane, the MD is classified in the following configurations
+\citep{Zhang2015, Swaminathan2018}: DCMD (Direct Contact Membrane Distillation), AGMD
+(Air Gap Membrane Distillation), SGMD (Sweeping Gas Membrane Distillation), VMD
+(Vacuum Membrane Distillation), PGMD (Permeate Gap Membrane Distillation), CGMD
+(Conductive Gap Membrane Distillation), V-AGMD (Vacuum-Enhanced Air Gap Membrane
+Distillation), among other variants. Each configuration has its advantages and intrinsic
+disadvantages, so the choice of one of them is still a research theme, which is usually
+directed through metrics such as GOR (Gained Output Ratio) and SEC (Specific Energy
+Consumption), which are parameters for energy efficiency analysis. The DCMD is the most
+studied and straightforward configuration among them, widely used for desalination
+studies and concentration of aqueous solutions.
+
+In general, the increase in the thermal efficiency of MD systems is achieved by improving
+the performance of membranes (by choosing membranes with low thermal conductivity,
+adequate porosity, pore size and pore size distribution, and thickness), as well as by
+reducing the amount of external heat to be supplied to the process
+\citep{Gostoli1998, Khayet2006, AlObaidani2008, Yao2013, Li2014, Swaminathan2018}.
+
+The heat supplied to the process can then be significantly reduced by the reuse of the
+heat available in the output currents of the desalination module through external heat
+exchangers, extending the applicability of the MD process and improving energy efficiency
+\citep{Gilron2007, Lee2011, Hausmann2012, Lu2012, Zhang2015, GonzalezBravo2015,
+Kim2015, Maheswari2015, Lin2014, Gustafson2018, Christie2020, Lisboa2021, Sampaio2022}.
+Obviously, operating conditions such as temperature, the feed and distillate flow rates,
+salinity of the feed stream, and its recirculation, among others, significantly affect
+the MD process and can improve or reduce process efficiency
+\citep{Khayet2000, Wang2009, Zhang2010, Fan2012, Alkhudhiri2012, Guan2014}.
+
+Additionally, since MD presents a low recovery ratio per pass (ratio between the
+production rate of pure water and the feed flow), using some form of recirculation of
+the brine/retentate stream is mandatory to increase efficiency. In this way, by
+considering a CGMD module, \citet{SwaminathanLienhard2018} describe four operation
+strategies that enable high global recovery using a single-pass low recovery process
+(batch recirculation, semi-batch recirculation, continuous recirculation, and continuous
+multi-stage recirculation). The first two operations are classified as
+transient/discontinuous processes, while the last two are steady state ones. According
+to these authors, who studied the salinity variation from a lower limit of 70~g/kg to an
+upper limit of 260~g/kg, the batch operation is the best option since GOR is about twice
+for the same distillate flow when compared to the continuous recirculation operation.
+
+\citet{Sampaio2022} modeled a seawater desalination DCMD plant with heat recovery of
+the recirculating hot distillate stream by using a DCMD module composed by a bundle of
+hollow-fiber tubes. He combined analytical solutions for the mass transfer problem
+across the membranes with the finite volume method for solution the steady-state heat
+transfer problem. Still, based on \citet{Christie2020} and \citet{Lin2014}, and to
+extend their works, \citet{Sampaio2022} developed an approximation for the optimal
+value of the ratio between permeate and feed flow rates, and for the maximum mass
+recovery rate that, differently from the expressions developed by \citet{Christie2020}
+and \citet{Lin2014}, take into consideration the membrane thermal efficiency.
+
+Thus, based on the works of \citet{Swaminathan2018}, \citet{Christie2020},
+\citet{Lisboa2021}, and \citet{Sampaio2022} and extending their analyses, the present
+work aims at the development of physical-mathematical modeling, in the unsteady-state
+regime, and subsequent numerical simulation of a hollow-fiber DCMD system with double
+recirculation and heat recovery. The main goal is firstly to evaluate the potential of
+heat recovery from the retentate stream to increase the energy efficiency of the system
+to produce distilled water. Furthermore, an application of the model to study the
+desalination process in regions with high seasonal hydrological stress, such as the
+semi-arid region of the Brazilian northeastern. In addition to the classical batch,
+semi-batch, continuous, and steady-state modes of operation, two intermediary modes,
+namely, mixing tank volume controlling and mixing tank salt concentration controlling,
+are also introduced. The aim is to verify their effect on the behavior of the system
+efficiency and on the water recovery ratio (for minimizing the well brackish water
+consumption). These controlling schemes can also be operated in conjunction with total or
+partial recirculation, i.e., when the brine is rejected from the system with fraction
+rejections equal or different to the unity, respectively.
+
+Table~\ref{tab:litreview} presents, in a condensed way, a brief bibliographic review
+of the main experimental and simulation works on the thermal efficiency of MD systems,
+highlighting the main contributions of each of the works, especially, but not limited to,
+those works that adopt heat recovery and recirculation of flow streams using hollow fiber
+membrane configuration.
+
+\begin{table}[htbp]
+\centering
+\caption{Literature review on thermal efficiency in MD systems by heat recovery.}
+\label{tab:litreview}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{lcccp{7cm}}
+\toprule
+\multirow{2}{*}{\textbf{Reference}} & \multicolumn{3}{c}{\textbf{Heat Recovery}} & \multirow{2}{*}{\textbf{Observations}} \\
+\cmidrule{2-4}
+ & \textbf{Distillate} & \textbf{Distillate} & \textbf{Retentate} & \\
+\midrule
+Fane \textit{et al.} (1987) & X & X & X & Experimental/Simulation -- Hollow fiber -- DCMD \\
+Schneider \textit{et al.} (1988) & X & X & X & Experimental -- Hollow Fiber -- DCMD \\
+Kurokawa and Sawa (1996) & X & X & X & Simulation -- Flat fiber -- DCMD \\
+Li and Sirkar (2004) & --- & --- & --- & Experimental -- Hollow Fiber -- DCMD -- Crossflow \\
+Gilron \textit{et al.} (2007) & X & X & X & Simulation -- Hollow fiber -- DCMD Cascade \\
+Lee \textit{et al.} (2011) & X & X & X & Experimental/Simulation -- Hollow Fiber -- DCMD Cascade \\
+Hausmann \textit{et al.} (2012) & --- & X & X & Experimental/Simulation -- Flat Fiber \\
+He \textit{et al.} (2013) & X & X & X & Simulation -- Hollow fiber -- DCMD Cascade \\
+Chung \textit{et al.} (2014) & X & X & X & Experimental/Simulation -- Hollow fiber -- DCMD cascade \\
+Duong \textit{et al.} (2015) & --- & X & X & Experimental/Simulation -- Flat Fiber -- DCMD \\
+Lin \textit{et al.} (2014) & X & X & --- & Simulation -- DCMD -- FLR/DLR \\
+Guan \textit{et al.} (2015) & X & X & X & Simulation -- Hollow fiber -- DCMD \\
+Zhang \textit{et al.} (2015) & X & X & X & Review on heat recovery in MD systems \\
+Lokare \textit{et al.} (2018) & --- & X & X & Simulation -- DCMD -- Brine recycling \\
+Christie \textit{et al.} (2020) & X & X & X & Simulation -- DCMD -- FLR/DLR \\
+Lisboa \textit{et al.} (2021) & X & --- & --- & Simulation -- Hollow fiber -- DCMD \\
+Sampaio (2022) & X & X & --- & Simulation -- Hollow fiber -- DCMD \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+% ----------------------------------------------------------------
+\section{System Description}
+
+The MD desalination plant modelled in the present work is characterized by a water
+desalination system that operates in the transient regime, containing a DCMD module (a
+vessel with a bundle of hollow fiber membranes), two tanks (a mixing and collector), and
+running with dual recirculation and dual heat recovery, where the heat available at the
+output of the module from the feed and distillate streams are recovered through the heat
+exchangers, HX-1 and HX-2, respectively, as shown in Figure~\ref{fig:system}. The heat
+source and sink are constant-temperature heat reservoirs, so the feed and distillate
+streams reach the specified values of the source/sink temperatures by supplying/extracting
+exactly the corresponding amount of heat required.
+
+\begin{figure}[htbp]
+  \centering
+  % \includegraphics[width=\linewidth]{fig1_system.png}
+  \fbox{\textit{Figure 1 -- Design of the DCMD system with double heat recovery and
+  partial/total recirculation of the retentate current.}}
+  \caption{Design of the DCMD system with double heat recovery and partial/total
+  recirculation of the retentate current.}
+  \label{fig:system}
+\end{figure}
+
+At the initial time, the feed circuit is completely filled with brackish water at the
+well salinity ($c_s^{well}$) and ambient temperature ($T_{amb}$). The distillate circuit
+is filled with distilled water at the same ambient temperature. The feed stream leaves
+the mixing tank at state~3 ($c_{s3}$, $V_3 = V_{feed}$, $T_3$) and enters HX-1, which
+heats it to state~4 ($c_{s4}$, $V_4$, $T_4$) by receiving energy from the distillate
+leaving the DCMD module at state~11 ($c_{s11}$, $V_{11}$, $T_{11}$). The mandatory use
+of this heat exchanger (HX-1) greatly increases the efficiency of the MD system by
+reducing the amount of heat ($q_h$) that must be supplied by the heater to raise the feed
+stream temperature to the working temperature at state~5 ($c_{s5}$, $V_5$, $T_5 =
+T_{feed}$).
+
+The concentrated module effluent (the retentate) at state~6 ($c_{s6}$, $V_6$, $T_6$)
+can be removed from the system (as a reject stream) or it can be recycled (recirculated).
+In the present work, the computational code was built taking into consideration both
+possibilities, simultaneously or not, depending on a flow rejection fraction ($\lambda$)
+at state~9 ($c_{s9}$, $V_9$, $T_9$), which directly and dynamically impacts the
+concentration of the solution in the tank and its volume, $V_{mix}$. When $\lambda = 1$,
+the brine is completely rejected at state~9 (the MD system must be continuously fed from
+the well on a permanent basis). Otherwise, when $\lambda < 1$, the retentate is partially
+recycled/rejected.
+
+When necessary, depending on salinity and volume of the mixing tank (or the operating
+regime), brackish water can be pumped from the well at state~1 ($V_{well}$, $c_s^{well}$,
+$T_{well}$), passing through HX-2 as a cold stream to gain energy carried by the effluent
+retentate from the DCMD module at state~6, which will be cooled down to state~7 ($c_{s7}$,
+$Q_7$, $T_7$). The stream at state~7 can be directed, either totally ($\lambda = 0$) or
+partially ($0 < \lambda < 1$), to the mixing tank through state~8 ($c_{s8}$, $V_8$, $T_8$),
+to be mixed with the heated brackish water stream coming from state~2.
+
+To perform the present study, the operational ranges of the PLICA-7 DCMD module produced
+by Aquastill for experiments in a relevant environment are adopted.
+
+% ----------------------------------------------------------------
+\section{Mathematical Model}
+
+The implemented mathematical model incorporates heat and mass transfer in all system
+components: mixing tank, distillate tank, DCMD module, heat source and sink, and heat
+exchangers 1 and 2. For the DCMD module, the model proposed by \citet{Lisboa2021} was
+extended to the unsteady-state regime. The authors treated the hollow-fiber DCMD module
+as an equivalent porous medium composed of the following constituents: the porous shell
+medium (where the feed stream flows), the porous lumen medium (where the distillate
+stream flows), and the membrane (where the distillation process occurs).
+
+An illustrative figure of the porous media model employed to analyze the heat and mass
+transfer in the vessel is shown in Figure~\ref{fig:porousmedia}.
+
+\begin{figure}[htbp]
+  \centering
+  % \includegraphics[width=\linewidth]{fig2_porous.png}
+  \fbox{\textit{Figure 2 -- Illustration of the porous media models.}}
+  \caption{Illustration of the porous media models. Cross sections of the: (a)~Porous
+  medium, lumen side; (b)~Module and hollow-fiber membrane bundle; (c)~Porous medium,
+  shell side. Figure~1 from \citet{Lisboa2021}. Reprinted with permission from Elsevier.
+  Copyright 2021.}
+  \label{fig:porousmedia}
+\end{figure}
+
+The hollow fiber membranes are considered to be uniformly distributed along a vessel
+(module) cross section, with their axis parallel to the vessel axis. The module porosity
+is defined as the ratio of the phase volume to the total vessel volume:
+\begin{equation}
+  \varepsilon_l = \frac{N_{fbr}\,\pi r_l^2}{\pi r_v^2}
+  \label{eq:porl}
+\end{equation}
+\begin{equation}
+  \varepsilon_s = \frac{\pi r_v^2 - N_{fbr}\,\pi r_s^2}{\pi r_v^2}
+  \label{eq:pors}
+\end{equation}
+
+Here, $\varepsilon_\gamma$ is the porosity of phase $\gamma$ (with $\gamma = l$ for the
+lumen phase and $\gamma = s$ for the shell phase), $N_{fbr}$ is the number of fibers in
+the vessel, $r_\gamma$ is the radius of the $\gamma$ phase, and $r_v$ is the radius of
+the vessel. Given that the membrane has a thickness $\delta$, the outer radius of the
+membrane will be $r_s = r_l + \delta$.
+
+\begin{figure}[htbp]
+  \centering
+  % \includegraphics[width=0.5\linewidth]{fig3_fiber.png}
+  \fbox{\textit{Figure 3 -- Representation for the single-fiber model.}}
+  \caption{Representation for the single-fiber model of the hollow-fiber membrane module.}
+  \label{fig:fiber}
+\end{figure}
+
+The specific surface area, $a_\gamma$, used in heat and mass transfer calculations, is
+the ratio of the surface area available for transport phenomena in each phase to the
+vessel volume:
+\begin{equation}
+  a_\gamma = \frac{N_{fbr}\,2\pi r_\gamma}{\pi r_v^2}
+  \label{eq:specsurf}
+\end{equation}
+
+Considering that the heat exchangers, the distillate and mixing tanks, and the DCMD
+module are adiabatic, and that the salinity and temperature fields inside them are
+uniform (except inside the DCMD module), the physical situation is mathematically
+modelled as follows.
+
+\subsection*{Mixture and Distillate Tanks}
+\begin{align}
+  \frac{dV_{mix}}{dt} &= \dot{V}_2 + \dot{V}_8 - \dot{V}_3 \label{eq:vmix}\\
+  \frac{d(C_{s,mix}\,V_{mix})}{dt} &= \dot{V}_2\,C_{s2} + \dot{V}_8\,C_{s8} - \dot{V}_3\,C_{s3} \label{eq:csmix}\\
+  \frac{d(T_{mix}\,V_{mix})}{dt} &= \dot{V}_2\,T_2 + \dot{V}_8\,T_8 - \dot{V}_3\,T_3 \label{eq:tmix}\\
+  \frac{d(T_{col}\,V_{col})}{dt} &= \dot{V}_{12}\,T_{12} + \dot{V}_{jwl}\,T_{l,o} - \dot{V}_{11}\,T_{11} \label{eq:tcol}
+\end{align}
+
+\subsection*{DCMD Module}
+\begin{align}
+  \rho_s\,c_{p,s}\,\varepsilon_s\,\frac{\partial T_s}{\partial t} &=
+    k_s\,\varepsilon_s\,\frac{\partial^2 T_s}{\partial z^2}
+    - h_s\,a_s\,(T_s - T_{m,s}) - j_{wl}\,a_l\,h_{fg} \label{eq:modfeed}\\
+  \rho_l\,c_{p,l}\,\varepsilon_l\,\frac{\partial T_l}{\partial t} &=
+    k_l\,\varepsilon_l\,\frac{\partial^2 T_l}{\partial z^2}
+    + h_l\,a_l\,(T_{m,l} - T_l) \label{eq:moddist}
+\end{align}
+
+with initial conditions:
+\begin{equation}
+  T_s(z,0) = T_l(z,0) = T_{amb} \label{eq:ic}
+\end{equation}
+
+and boundary conditions:
+\begin{align}
+  T_s(0,t) &= T_5\,,\quad T_l(L,t) = T_{col}(t) \label{eq:bc1}\\
+  \frac{\partial T_s}{\partial z}\bigg|_{z=L} &= 0\,,\quad
+  \frac{\partial T_l}{\partial z}\bigg|_{z=0} = 0 \label{eq:bc2}
+\end{align}
+
+In these expressions, $\rho_\gamma$ is the specific mass of phase $\gamma$, $c_{p,\gamma}$
+is the specific heat at constant pressure, $k_\gamma$ is the thermal conductivity,
+$T_\gamma$ is the bulk temperature, $T_{m,\gamma}$ is the interface temperature between
+the hollow fiber membrane surface and the liquid phase $\gamma$, and $h_\gamma$ is the
+convection heat transfer coefficient. The convective heat transfer coefficients for the
+hot and cold streams are evaluated through the following empirical correlations:
+\begin{equation}
+  Nu_\gamma = \frac{(f_\gamma/8)\,Re_\gamma\,Pr_\gamma}
+    {1.07 + 12.7\sqrt{f_\gamma/8}\,(Pr_\gamma^{2/3}-1)}
+  \label{eq:Nu}
+\end{equation}
+
+where $Re_\gamma$ is the Reynolds number, $Pr_\gamma$ is the Prandtl number, and
+$f_\gamma$ is the friction factor:
+\begin{align}
+  Re_\gamma &= \frac{\rho_\gamma\,u_\gamma\,d_{h,\gamma}}{\mu_\gamma}\,,\quad
+  d_{h,l} = 2r_l\,,\quad d_{h,s} = 2(r_c - r_s) \label{eq:Re}\\
+  f_l &= (0.790\ln Re_l - 1.64)^{-2}\,,\quad
+  f_s = (0.790\ln Re_s - 1.64)^{-2} \label{eq:f}
+\end{align}
+
+The energy and mass balances for the remaining control volumes in the feed and distillate
+streams provide the following relationships.
+
+\noindent\textbf{For the temperatures:}
+\begin{align}
+  T_1 &= T_{well}\,,\quad T_3 = T_{mix} \label{eq:T13}\\
+  T_6 &= T_s(L,t)\,,\quad T_{11} = T_l(0,t) \label{eq:T611}\\
+  T_5 &= T_{feed}\,,\quad T_{12} = T_{col} \label{eq:T512}\\
+  T_9 &= T_7 \label{eq:T9}\\
+  T_{col,out} &= T_{col}\,,\quad T_{mix,out} = T_{mix} \label{eq:Tcol}
+\end{align}
+
+\noindent\textbf{For the flow rates:}
+\begin{align}
+  \dot{V}_1 &= \dot{V}_{well}\,,\quad \dot{V}_3 = \dot{V}_s \\
+  \dot{V}_5 &= \dot{V}_3 = \dot{V}_6 = \dot{V}_s \\
+  \dot{V}_9 &= \lambda\,\dot{V}_7\,,\quad \dot{V}_8 = (1-\lambda)\,\dot{V}_7 \\
+  \dot{V}_{11} &= \dot{V}_{12} = \dot{V}_l
+\end{align}
+
+\noindent\textbf{For the salinities:}
+\begin{align}
+  C_{s1} &= C_{s,well}\,,\quad C_{s3} = C_{s,mix} \\
+  C_{s6} &= C_{s7} = C_{s8} = C_{s9} \\
+  C_{s,col} &= 0\,,\quad C_{s,dist} = 0
+\end{align}
+
+The temperatures $T_4$, $T_{12}$ and $T_2$, $T_7$ are obtained from the definitions
+of the effectiveness of heat exchangers HX-1 and HX-2, respectively:
+\begin{align}
+  \varepsilon_{HX1} &= \frac{T_4 - T_3}{T_{11} - T_3} \label{eq:hx1}\\
+  \varepsilon_{HX2} &= \frac{T_6 - T_7}{T_6 - T_1} \label{eq:hx2}\\
+  T_2 &= T_1\,,\quad T_{12} = T_{col} \label{eq:T2T12}
+\end{align}
+
+In the salinity equations, $\alpha_{memb}$ is the effectiveness of the membrane in
+retaining salt, taken as 100\% in the present study ($\alpha_{memb} = 1$). The properties
+of the brackish well water are determined in each point of the system as a function of
+temperature and salinity \citep{Sparrow2003}.
+
+The temperatures of the membrane interfaces along the $z$-direction, $T_{m,l}(z,t)$
+and $T_{m,s}(z,t)$, required in Eqs.~\eqref{eq:modfeed}--\eqref{eq:moddist}, are
+evaluated iteratively through the following procedure:
+\begin{align}
+  Q_{m} &= h_s\,a_s\,(T_s - T_{m,s}) = Q_{cond} + Q_{lat} \label{eq:Qm}\\
+  Q_{cond} &= \frac{k_m}{\delta}\,a_l\,(T_{m,s} - T_{m,l}) \label{eq:Qcond}\\
+  Q_{lat} &= j_{wl}\,a_l\,h_{fg} \label{eq:Qlat}\\
+  Q_{conv,l} &= h_l\,a_l\,(T_{m,l} - T_l) \label{eq:Qconvl}\\
+  N_{wl} &= \frac{j_{wl}}{M_w} \label{eq:Nwl}
+\end{align}
+
+The density of the mixture at each position or control volume of the circuit, $\rho_i$,
+is related to the salinity, $\phi_i$, through the density of pure water and salt at
+$T_{amb} = 25^\circ$C ($\rho_{salt} = 2165$~kg/m$^3$ and $\rho_{H_2O} = 997.4$~kg/m$^3$):
+\begin{equation}
+  \rho_i = \rho_{H_2O} + \phi_i\,(\rho_{salt} - \rho_{H_2O})
+  \label{eq:rho}
+\end{equation}
+
+Other fluid properties, such as specific heat at constant pressure, thermal conductivity,
+viscosity, and enthalpy of vaporization, are also evaluated as a function of salinity and
+temperature, according to the correlations proposed by \citet{Sparrow2003}.
+
+\subsection{Modeling Mass Transfer in the Membrane}
+
+To partially close the system of equations, the mass transfer inside the DCMD module
+must be modeled in order to determine the water vapor mass flux through the membrane,
+$j_{wl}$. For this, as performed by \citet{Lisboa2021}, the Dusty Gas model
+\citep{Lawson1997}, one of the most widely used models for predicting flow of distilled
+water through membranes, was employed:
+\begin{equation}
+  N_w + \frac{p_a}{p_w}\,\frac{N_w\,D_{wk}}{D_{wa0}} = -\frac{D_{wk}}{R\,T_m}\,\frac{dp_w}{dz}
+  \label{eq:dustygas}
+\end{equation}
+
+Air is normally considered at rest in the membrane pores, so that $N_a \approx 0$.
+Applying Dalton's law, one obtains the following expressions for the molar, $N_{wl}$,
+and mass, $j_{wl}$, fluxes of distilled water through the hollow fiber membranes (based
+on $r_l$):
+\begin{align}
+  N_{wl} &= \frac{D_{eff}}{R\,T_m\,\delta}\,(p_s - p_l) \label{eq:Nwl2}\\
+  j_{wl} &= M_w\,N_{wl} \label{eq:jwl}
+\end{align}
+
+The Knudsen diffusivity of water vapor, $D_{wk}$, the molecular diffusivity of water in
+air, $D_{wa0}$, and the effective molecular diffusivity, $D_{eff}$, are evaluated using
+the classical relationships:
+\begin{align}
+  D_{wk} &= \frac{d_p}{3}\sqrt{\frac{8R\,T_m}{\pi\,M_w}} \label{eq:Dwk}\\
+  D_{wa0} &= 1.895 \times 10^{-5}\,T_m^{2.072}\,P^{-1} \label{eq:Dwa0}\\
+  D_{eff} &= \frac{\varepsilon_m}{\tau_m}\,\frac{D_{wk}\,D_{wa0}}{D_{wk} + D_{wa0}} \label{eq:Deff}
+\end{align}
+
+The total pressure inside the membrane pores, $P$, is usually the atmospheric pressure.
+The partial vapor pressures of the salt streams at the membrane interfaces, $p_s$ and
+$p_l$, are evaluated from the saturated vapor pressures, $p_{v\gamma}$, obtained by
+using the Antoine equation, corrected for the respective salt mole fractions
+($x_{salt,\gamma}$) and activity coefficients ($\alpha_\gamma$):
+\begin{align}
+  p_s &= \alpha_s\,(1-x_{salt,s})\,p_{v,s}(T_{m,s}) \label{eq:ps}\\
+  p_l &= \alpha_l\,(1-x_{salt,l})\,p_{v,l}(T_{m,l}) \label{eq:pl}
+\end{align}
+
+The most common models for the membrane thermal conductivity are based on geometrical
+distributions of the solid and gaseous phases. \citet{GarciaPayo2004} recommend that,
+for porous media with porosity greater than 0.6, the Maxwell~I thermal conductivity model
+be used. These models are mathematically described in terms of the solid matrix, $k_s$,
+and fluid/gaseous, $k_f$, conductivities, as:
+\begin{align}
+  k_m &= \varepsilon_m\,k_f + (1-\varepsilon_m)\,k_s \quad\text{(parallel model)} \label{eq:km_par}\\
+  k_m &= \left[\frac{\varepsilon_m}{k_f} + \frac{1-\varepsilon_m}{k_s}\right]^{-1} \quad\text{(series model)} \label{eq:km_ser}\\
+  k_m &= k_f\,\frac{k_s + 2k_f - 2\varepsilon_m(k_f - k_s)}{k_s + 2k_f + \varepsilon_m(k_f - k_s)}\,,\quad
+    k_f = \varepsilon_m\,k_{gas} + (1-\varepsilon_m)\,k_{polymer}
+    \quad\text{(Maxwell~I model)} \label{eq:km_max}
+\end{align}
+
+A significant number of tortuosity models can be found in the literature
+\citep{Ghanbarian2013}. \citet{Kim2021} analyzed 11 models of tortuosity. The most
+common ones are:
+
+\noindent\textbf{Geometric (Euclidian) Models:}
+\begin{align}
+  \tau_m &= \frac{(2-\varepsilon_m)^2}{\varepsilon_m} \quad\text{Mackies and Meares (1955)} \label{eq:tau_mm}\\
+  \tau_m &= 1 + \frac{1-\varepsilon_m}{\varepsilon_m} \ln\frac{1}{1-\varepsilon_m} \quad\text{Beeckman (1990)} \label{eq:tau_beeck}
+\end{align}
+
+\noindent\textbf{Fractal Models:}
+\begin{align}
+  \tau_m &= \varepsilon_m^{-0.5} \quad\text{Elias-Kohav \textit{et al.} (1991)} \label{eq:tau_elias}\\
+  \tau_m &= \varepsilon_m^{-0.5} \quad\text{Bruggeman (1935)} \label{eq:tau_brugg}
+\end{align}
+
+According to \citet{Curcino2022}, an adequate selection must be supported on the
+knowledge of the morphological and structural properties of the membrane used in the
+experimental desalination module.
+
+\subsection{Efficiency Metrics}
+
+To evaluate the desalination system and verify the improvement in energy efficiency, the
+thermal efficiency $\eta_{th}$, the gain-output ratio $GOR$, the specific thermal energy
+consumption $SEC_{th}$, and the recovery ratio $RR$ are employed and analyzed in
+different operational scenarios. Those quantities are defined as:
+\begin{align}
+  \eta_{th} &= 1 - \frac{q_c}{q_h}\,,\quad
+  GOR = \frac{h_{fg}\,\dot{m}_{dist}}{q_h}\,,\quad
+  SEC_{th} = \frac{q_h}{\dot{V}_{dist}}\,,\quad
+  RR = \frac{V_{dist}}{V_{well}} \label{eq:metrics}
+\end{align}
+
+where:
+\begin{align}
+  q_h &= \dot{m}_5\,c_{p5}\,(T_5 - T_4) \label{eq:qh}\\
+  q_c &= \dot{m}_{12}\,c_{p12}\,(T_{12} - T_{col}) \label{eq:qc}\\
+  q_{HX1} &= \dot{m}_{11}\,c_{p11}\,(T_{11} - T_{12}) \label{eq:qHX1}\\
+  V_{dist} &= \int_0^{t_{end}} \dot{V}_{jwl}\,dt\,,\quad
+  V_{well} = \int_0^{t_{end}} \dot{V}_{well}\,dt \label{eq:Vdist}
+\end{align}
+
+The global $GOR$ and $SEC_{th}$ parameters are taken as the average values up to the
+simulation end time.
+
+A computational code to solve the coupled system of ordinary and partial differential
+equations was developed in the Fortran~95 language. The MMOLCH subroutine
+\citep{IMSL2022}, for solving hyperbolic partial differential equation systems through
+the method of lines, was employed, with a tolerance error set as $10^{-5}$. The
+non-linear equations for the interface temperatures were solved, within an error target
+prescribed at $10^{-11}$, with the routine ZBREN \citep{IMSL2022}.
+
+% ----------------------------------------------------------------
+\section{The System Operating Modes}
+
+To control the operation of the dynamic system and optimize the desalination system water
+production and brackish water consumption, a general algorithm based on volume and
+salinity of the mixture in the mixing reservoir is applied at each instant of time. The
+developed computational code is very flexible, allowing simulations of different
+desalination system operation scenarios: steady-state regime (no recirculation), batch
+recirculation, semi-batch recirculation, continuous recirculation (dynamic rejection
+fraction/recirculation), and partial recirculation operation mode with volume or
+concentration control.
+
+For the unsteady-state regimes, the system can start the operation with no brine
+rejection (total recirculation), $\lambda = \lambda_0 = 0$, or with a pre-defined
+rejection (partial recirculation), $\lambda_0 \neq 0$. For these regimes, the
+desalination system operates in such a way that the mixing tank, initially with a volume
+of brackish water of $V_{mix_0} = 100$~L, has its mixture consumed by the DCMD module,
+as distillate is produced over time.
+
+Additionally, to analyze the influence of the external heat exchangers on the system
+performance it is sufficient to vary their effectiveness ($\varepsilon_{HX1}$ and
+$\varepsilon_{HX2}$). By choosing $\varepsilon_{HX1} = 0$ and/or $\varepsilon_{HX2} = 0$,
+the heat exchangers are not included in the analysis.
+
+\subsection{Batch and Semi-Batch Operations}
+
+In batch and semi-batch operation modes, over each process cycle, the distillate is
+continuously removed from the system, and the remaining solution that leaves the MD
+module, with higher salinity, is directed to the feed tank ($\lambda = 0$). In the batch
+operation process, there is no water pumping from the well ($\dot{V}_{well} = 0$) between
+recycling, so the volume of the solution in the tank decreases, and the salt concentration
+increases over time. In the semi-batch operation cycle, the volume of the mixing tank is
+kept constant, by continuously adding fresh feed water from the well to the system, at
+the same proportion the distillate is removed ($\dot{V}_{well} = \dot{V}_{jwl}$).
+
+In both operation processes, the permeate production rate, as well as the heat transfer
+rate, will reduce as the feed stream of the MD module becomes increasingly saturated with
+salts. After the salinity of the solution in the mixing tank reaches a limiting value,
+the high-salinity brine is flushed-out ($\lambda$ is set to 1) until a minimum volume
+allowed is reached. Then, the power supply refills the tank from the well ($\dot{V}_{well}
+= \dot{V}_s$) until the minimum concentration is reached, and the cycle restarts.
+
+\subsection{Continuous Operation (Steady-State Operation with Partial Brine Recirculation)}
+
+In the continuous operation regime, a fixed operational brine salinity is specified at
+the MD module exit. Therefore, after the initial transients have elapsed and the solution
+that leaves the module is at the required salinity (reaching the steady-state regime), it
+must be continuously bled-out of the system at a specific fraction rejection ($\lambda$)
+that depends on the MD module performance. The make-up water from the well
+($\dot{V}_{well}$) is simultaneously added to the tank at a proportional flow rate that
+keeps constant the salinity of the stream at the MD module exit, which is related to that
+fraction rejection.
+
+The rejection fraction and the volumetric flow rate from the well is obtained according
+to the following salt and mixture mass balances at the mixing tank:
+\begin{align}
+  \lambda &= 1 - \frac{\dot{V}_{jwl}\,C_{s,well}}{(\dot{V}_s - \dot{V}_{jwl})\,(C_{s6} - C_{s,well})} \label{eq:lambda}\\
+  \dot{V}_{well} &= \dot{V}_{jwl} + \lambda\,(\dot{V}_s - \dot{V}_{jwl}) \label{eq:Vwell}
+\end{align}
+
+\subsection{Steady-State Operation with No Brine Recirculation}
+
+To simulate a steady state condition with no recirculation, it is sufficient to set
+$\lambda = \lambda_0 = \lambda_1 = 1$ and $\dot{V}_{well} = \dot{V}_s$ all the time
+during the simulations. In this situation, all retentate leaving the DCMD module is
+rejected and the system is continuously fed by the well at constant feed flow rate and
+salinity.
+
+\subsection{Volume or Concentration Controlling}
+
+In the mixing tank volume controlling operation, a minimum and a maximum allowed mixing
+tank volume is set as the operation limits. The salinity of the water in the mixing tank
+($c_{s,mix}(t)$) is continuously increasing with the distillate production, and its
+volume ($V_{mix}(t)$) decreases. When the minimum volume is reached ($V_{min}$), the
+tank is filled with brackish water from the well up to the maximum volume ($V_{max}$)
+previously chosen. The process then repeats until finishing the desalination operation.
+
+In the mixing tank salinity controlling operation, a minimum and a maximum allowed
+mixing tank salinity is set as the operation limits. The salinity of the water in the
+mixing tank ($c_{s,mix}(t)$) is continuously increasing with the distillate production,
+while its volume ($V_{mix}(t)$) decreases since there is no brackish water flow from the
+well. At the instant the maximum salinity allowed is reached ($C_{s,max}$), the pump from
+the well is turned on to feed the mixing tank until the salinity of the water contained
+in it falls to the minimum predefined value.
+
+% ----------------------------------------------------------------
+\section{Results}
+
+\subsection{Algorithm Verification}
+
+Before analyzing typical well operation scenarios, the developed computational code is
+verified by comparing its results with available literature data. Since no transient
+results are available, these comparisons are made with data for the steady-state regime.
+
+Table~\ref{tab:membranes} presents the physical and geometric characteristics of the
+membranes and modules employed in the comparisons. The experimental results of
+\citet{Wang2008}, \citet{Yang2011} and numerical results of \citet{Guan2014} and
+\citet{Kim2014} are employed for situations with no heat exchangers.
+
+\begin{table}[htbp]
+\centering
+\caption{Characteristics (input data) of the membranes and modules used for comparison.}
+\label{tab:membranes}
+\small
+\begin{tabular}{llllllll}
+\toprule
+\textbf{Parameter} & \textbf{Symbol} & \textbf{Unit}
+  & \textbf{Wang \textit{et al.} (2008)}
+  & \textbf{Kim (2014)}
+  & \textbf{Yang \textit{et al.} (2011)}
+  & \textbf{Guan \textit{et al.} (2014)} \\
+\midrule
+ & & & Experimental & Numerical & Experimental & Numerical \\
+\midrule
+Membrane inner radius & $r_l$ & mm & 0.3 & 0.3 & 0.46 & 0.49 \\
+Membrane thickness & $t$ & mm & 0.11 & 0.11 & 0.275 & 0.240 \\
+Polymer thermal conductivity & $k_p$ & W/(m$\cdot$K) & 0.18$^a$ & 0.18 & 0.18$^a$ & 0.18$^a$ \\
+Average pore diameter & $d_p$ & mm & 0.17$^b$ & 0.17 & 0.145/0.191 & 0.2$^b$ \\
+Porosity & $\varepsilon_m$ & --- & 0.738 & 0.738 & 0.83 & 0.85$^b$ \\
+Shell inlet temperature & $T_{e,s}$ & $^\circ$C & 30--79.3 & 30--79.3 & 35--70 & 30--80 \\
+Lumen inlet temperature & $T_{e,l}$ & $^\circ$C & 17.5 & 17.5 & 25 & 23.5--30 \\
+Total pore pressure & $P$ & kPa & 101.325$^a$ & 101.325$^a$ & 101.325$^a$ & 101.325$^a$ \\
+Shell side flow rate & $\dot{V}_s$ & L/min & 1.648$^c$ & 1.521 & 2.5--3.0 & 1.14--3.0 \\
+Lumen side flow rate & $\dot{V}_l$ & L/min & 0.407$^c$ & 0.407 & 0.4 & 0.046--0.4 \\
+Number of fibers & $N_{fbr}$ & --- & 30$^a$ & 30 & 20 & 22 \\
+Vessel radius & $r_v$ & mm & 3.241$^a$ & 3.232 & 4.75 & 7.5 \\
+Vessel length & $L$ & m & 0.200 & 0.200 & 0.225 & 0.200 \\
+Salt mass fraction shell & $w_{NaCl,s}$ & \% & 3.5$^d$ & 3.5 & 3.5 & 7.0 \\
+Lumen salt mass fraction & $w_{NaCl,l}$ & \% & 0.0 & 0.0 & 0.0 & 0.0 \\
+Cold/hot fluid arrangement & --- & --- & HOCI & HOCI & HOCI & HICO \\
+Direction of flow & --- & --- & Co-current & Countercurrent & Countercurrent & Countercurrent \\
+Membrane area & $A_{memb}$ & cm$^2$ & 150 & 152.7 & 220 & 180.9 \\
+Packing density & $\varphi$ & \% & 48$^a$ & 48 & 50 & 20.8$^a$ \\
+\bottomrule
+\end{tabular}
+
+\smallskip\footnotesize
+$^a$ Obtained from, or employed the calculation procedure in, \citet{Kim2014}.
+$^b$ Assumed in comparison with other works.
+$^c$ Calculated as a function of average velocities.
+$^d$ \citet{Lisboa2021} used $w_{NaCl,s} = 2.5\%$ in their simulations.
+\end{table}
+
+Table~\ref{tab:verify} presents a verification of the results obtained with the present
+work together with the work of \citet{Lisboa2021} and a comparison with the experimental
+results of \citet{Wang2008}.
+
+\begin{table}[htbp]
+\centering
+\caption{Verification of the computational code with the numerical results of
+\citet{Lisboa2021} and comparison with the experimental data of \citet{Wang2008}.
+$T_{e,l} = 17.5^\circ$C.}
+\label{tab:verify}
+\small
+\begin{tabular}{cccccccc}
+\toprule
+$T_{e,s}$ [$^\circ$C] & $\Delta T$ [$^\circ$C]
+  & \multicolumn{2}{c}{$T_{o,s}$ [$^\circ$C]}
+  & \multicolumn{2}{c}{$T_{o,l}$ [$^\circ$C]}
+  & \multicolumn{2}{c}{$j_{wl}$ [kg/(m$^2$$\cdot$h)]} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}
+ & & Present & Wang (2008) & Present & Wang (2008) & Present & Wang (2008) \\
+\midrule
+40.0 & 22.5 & 38.5 & 39.0 & 23.4 & 24.5 & 5.5  & $6.2 \pm 0.4$ \\
+49.5 & 23.0 & 47.2 & 48.0 & 26.5 & 27.8 & 10.1 & $11.5 \pm 0.7$ \\
+59.8 & 42.3 & 56.2 & 57.4 & 31.7 & 31.3 & 20.0 & $19.9 \pm 1.0$ \\
+70.2 & 52.7 & 65.1 & 67.2 & 37.5 & 36.2 & 32.8 & $30.8 \pm 1.0$ \\
+79.3 & 61.8 & 72.6 & 76.0 & 43.8 & 39.0 & 47.9 & $41.5 \pm 1.2$ \\
+\bottomrule
+\end{tabular}
+
+\smallskip\footnotesize
+* Based on the outer radius of the hollow fiber. $T_{Wang\_et\_al.}(2008)$: $T \pm 0.1^\circ$C.
+\end{table}
+
+The results show that the present methodology is consistent with the analyzed physics, at
+least in the steady-state regime, when compared to the experimental results of
+\citet{Wang2008}. This table also shows that the results obtained with the methodology
+in transient regime converge, as would be expected for long times, to the numerical
+results of \citet{Lisboa2021}.
+
+Another verification is illustrated in Figure~\ref{fig:distflux}, which shows a
+comparison of the results obtained in the present work for the produced distillate flux
+with the experimental results of \citet{Wang2008} and the numerical results of
+\citet{Kim2014}.
+
+\begin{figure}[htbp]
+  \centering
+  % \includegraphics[width=0.6\linewidth]{fig4_distflux.png}
+  \fbox{\textit{Figure 4 -- Comparison between the result obtained with the present
+  methodology and the experimental results of Wang et al.\ (2008) and numerical results
+  of Kim (2014) for the distillate flux.}}
+  \caption{Comparison between the result obtained with the present methodology and the
+  experimental results of \citet{Wang2008} and numerical results of \citet{Kim2014}
+  for the distillate flux.}
+  \label{fig:distflux}
+\end{figure}
+
+To illustrate the spatial temperature distribution along the DCMD module,
+Figure~\ref{fig:tempguan} brings a comparison between the results obtained with the
+present formulation and the numerical results of \citet{Guan2014} for the steady-state
+temperatures along the feed channel, $T_s$, of the feed/membrane interface, $T_{m,s}$,
+of the membrane/distillate interface, $T_{m,l}$, and of the distillate channel, $T_l$.
+The inlet temperatures and flow rates of the feed and distillate streams employed in the
+simulation were: $T_{e,s} = 80^\circ$C, $T_{e,l} = 30^\circ$C and $\dot{V}_s =
+1.1425$~L/min, $\dot{V}_l = 0.04635$~L/min, respectively.
+
+\begin{figure}[htbp]
+  \centering
+  % \includegraphics[width=0.6\linewidth]{fig5_tempguan.png}
+  \fbox{\textit{Figure 5 -- Temperature distribution along the axial position in the
+  DCMD module. Comparison with Guan et al.\ (2014).}}
+  \caption{Temperature distribution along the axial position in the DCMD module in the
+  feed, interface, and distillate regions. Comparison with the numerical results of
+  \citet{Guan2014}.}
+  \label{fig:tempguan}
+\end{figure}
+
+\subsection{Simulations with the Brackish Water Well}
+
+\subsubsection{Preliminary Analysis}
+
+For simulation of a real desalination system fed by brackish water wells, data from
+wells commonly found in the northeastern region of Brazil were used, whose temperatures,
+salt concentrations, typical flow rates, and other properties can be found in
+\citet{Veiga2017}. Table~\ref{tab:wells} provides the characteristic parameter values
+of 444 wells located in the Ceará state of Brazil.
+
+\begin{table}[htbp]
+\centering
+\caption{Characteristics of wells in the state of Ceará/Brazil.}
+\label{tab:wells}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Limits} & \textbf{Salt concentration [g$_s$/L]} & \textbf{Flow rates [m$^3$/h]} \\
+\midrule
+Maximum & 13 & 15 \\
+Minimum & 0.199 & 0.10 \\
+Average & 2.532 & 3.45 \\
+\textbf{Adopted} & \textbf{3.5} & \textbf{3} \\
+\bottomrule
+\end{tabular}
+
+\smallskip\footnotesize $T_{well} = T_{amb} = 25^\circ$C
+\end{table}
+
+The parameters relating to the characteristics of the DCMD module and the membrane are
+those provided in Table~\ref{tab:module}. The flow arrangement of the module is carried
+out in the HOCI configuration (hot fluid in the shell and cold fluid in the lumen) in
+counter-current.
+
+\begin{table}[htbp]
+\centering
+\caption{Input data, membrane and module, used in the simulation of the wells.}
+\label{tab:module}
+\begin{tabular}{lllll}
+\toprule
+\textbf{Parameter} & \textbf{Symbol} & \textbf{Unit} & \textbf{Lisboa \textit{et al.} (2021)} \\
+\midrule
+Membrane inner radius & $r_l$ & mm & 0.3 \\
+Membrane thickness & $t$ & mm & 0.1 \\
+Polymer thermal conductivity & $k_p$ & W/(m$\cdot$K) & 0.2 \\
+Average pore diameter & $d_p$ & mm & 0.2 \\
+Membrane porosity & $\varepsilon_m$ & --- & 0.8 \\
+Inlet temperature on shell side & $T_{e,s}$ & $^\circ$C & 80 \\
+Inlet temperature on the lumen side & $T_{e,l}$ & $^\circ$C & 25 \\
+Total pore pressure & $P$ & kPa & 101.325 \\
+Shell-side flow rate & $\dot{V}_s$ & L/min & 30--50--80 \\
+Flow rate on the lumen side & $\dot{V}_l$ & L/min & 30--50--80 \\
+Number of fibers & $N_{fbr}$ & --- & 10{,}000 \\
+Vessel radius & $r_v$ & mm & 50 \\
+Vessel length & $L$ & m & 1 \\
+Salt mass fraction on shell side & $w_{NaCl,s}$ & \% & 0.035 \\
+Lumen-side salt mass fraction & $w_{NaCl,l}$ & \% & 0 \\
+Membrane area & $A_{memb}$ & m$^2$ & 7.2 \\
+Packing & $\varphi$ & \% & 0.64 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+To illustrate a typical dynamic behavior of the heat transfer process inside the DCMD
+module, Figure~\ref{fig:tempprofiles} shows the bulk temperature profiles of the retentate
+and distillate streams along the respective channels inside the module, at four instants
+of time (approximately $2.8\times10^{-4}$~s, 3.4~s, 16~s, and 30~s), for the flow
+condition $\dot{V}_l = \dot{V}_s = 50$~L/min.
+
+\begin{figure}[htbp]
+  \centering
+  % \includegraphics[width=0.6\linewidth]{fig6_tempev.png}
+  \fbox{\textit{Figure 6 -- Time evolution of temperature profiles inside the DCMD module.}}
+  \caption{Time evolution of temperature profiles inside the DCMD module for $\dot{V}_l
+  = \dot{V}_s = 50$~L/min.}
+  \label{fig:tempprofiles}
+\end{figure}
+
+As can be seen from this figure, the time evolution of the heat transfer inside the DCMD
+module is very fast, since the steady-state condition is reached in just a few seconds,
+taking no more than 30~s for the module to attain this regime.
+
+Figures~\ref{fig:tempsteady}a and \ref{fig:tempsteady}b illustrate bulk temperature
+profiles of the feed and permeate channels along the module for different conditions of
+volumetric flow rate of the streams, considering steady-state single-pass flow in the
+DCMD module, and no heat recovery ($\lambda_0 = \lambda = 1$, $\dot{V}_{well} = \dot{V}_s$,
+$\varepsilon_{HX1} = \varepsilon_{HX2} = 0$).
+
+\begin{figure}[htbp]
+  \centering
+  % \includegraphics[width=\linewidth]{fig7_tempsteady.png}
+  \fbox{\textit{Figure 7 -- Steady-state temperature profiles along the axial position
+  in the module DCMD.}}
+  \caption{Steady-state temperature profiles along the axial position in the module DCMD
+  for: a)~different feed and distillate flow rates; b)~equal distillate and feed flow
+  rates ($\dot{V}_l = \dot{V}_s$).}
+  \label{fig:tempsteady}
+\end{figure}
+
+For an intuitive understanding of how the operational and configurational decisions affect
+the energy efficiency, \citet{Christie2020}, based on \citet{Lin2014}, introduced a
+critical mass flow rate ratio, $\alpha^*$, to define the theoretical condition of maximum
+water recovery factor in steady-state single-pass DCMD systems, $R_{max}$:
+\begin{align}
+  \alpha^* &= \frac{\dot{m}_s\,c_{p,s}}{\dot{m}_l\,c_{p,l}}\bigg|_{\text{critical}}\,,\quad
+  \alpha = \frac{\dot{m}_s\,c_{p,s}}{\dot{m}_l\,c_{p,l}} \label{eq:alpha}\\
+  R_{max}^{FLR} &> R_{max}^{DLR} \label{eq:Rmax}
+\end{align}
+
+For $\alpha < \alpha^*$, the module operates in the DLR regime. Conversely, for
+$\alpha > \alpha^*$, the module operates in the FLR regime.
+
+Table~\ref{tab:table6} brings some results obtained for the averaged theoretical maximum
+water recovery factor, distillate mass flux, temperature polarization coefficient, and
+DCMD module thermal efficiency ($GOR$ and $SEC_{th}$). Three scenarios related to the
+use of the external heat exchangers for two feed salinity levels and different feed and
+distillate flow rates were studied.
+
+\begin{table}[htbp]
+\centering
+\caption{Influence of the operational conditions on the averaged DCMD module efficiency
+metrics. Steady-state regime (8~h).}
+\label{tab:table6}
+\scriptsize
+\begin{tabular}{lcccccccccccc}
+\toprule
+\textbf{Flow Condition} & $\alpha$ & $\alpha^*$ & \textbf{Oper.}
+  & $T_{thr}$ [$^\circ$C] & $Z_{thr}$ [m]
+  & $RR$ & $\dot{V}_{jwl}$ & TPC & $\eta_{th}$
+  & \multicolumn{3}{c}{$GOR$ / $SEC_{th}$ [kWh/L]} \\
+\cmidrule(lr){11-13}
+ & & & & & & & [L/min] & [-] & [\%]
+  & $\varepsilon_{HX1,2}=0$
+  & $\varepsilon_{HX1}=0.8$; $\varepsilon_{HX2}=0$
+  & $\varepsilon_{HX1}=\varepsilon_{HX2}=0.8$ \\
+\midrule
+\multicolumn{13}{l}{\textit{$w_{NaCl,s} = 3.5\%$}} \\
+$\dot{V}_l=30 < \dot{V}_s=80$ & 0.38 & 0.88 & DLR & 80.0 & 0.63 & 2.5 & 2.6 & 0.73 & 73 & 0.28 / 2.5 & 0.41 / 1.7 & 1.4 / 0.48 \\
+$\dot{V}_l \approx 44 < \dot{V}_s = 50$ & \textbf{0.88} & \textbf{0.88} & \textbf{FLR} & --- & --- & \textbf{5.0} & \textbf{3.3} & \textbf{0.56} & \textbf{67} & \textbf{0.56 / 1.2} & \textbf{1.9 / 0.36} & \textbf{3.3 / 0.21} \\
+$\dot{V}_l = \dot{V}_s = 50$ & 1.0 & 0.88 & FLR & --- & --- & 5.2 & 3.4 & 0.59 & 66 & 0.58 / 1.2 & 1.8 / 0.38 & 2.5 / 0.27 \\
+\midrule
+\multicolumn{13}{l}{\textit{$w_{NaCl,s} = 12.0\%$}} \\
+$\dot{V}_l \approx 42 < \dot{V}_s = 50$ & \textbf{0.74} & \textbf{0.74} & \textbf{FLR} & --- & --- & \textbf{2.2} & \textbf{1.7} & \textbf{0.72} & \textbf{37} & \textbf{0.30 / 2.3} & \textbf{0.88 / 0.79} & \textbf{1.6 / 0.43} \\
+$\dot{V}_l = \dot{V}_s = 80$ & 0.88 & 0.74 & FLR & --- & --- & 2.9 & 3.6 & 0.68 & 50 & 0.40 / 1.7 & 0.96 / 0.72 & 1.5 / 0.46 \\
+\bottomrule
+\end{tabular}
+
+\smallskip\footnotesize
+(a) Feed-side threshold temperature, $T_{thres,s}$. (b) Distillate-side threshold temperature, $T_{thres,l}$.
+\end{table}
+
+\subsubsection{Operating Regime Analysis}
+
+After characterizing the DCMD desalination system, investigation of the behavior of the
+system for different operating modes is now performed. In all situations analyzed, the
+FLR configuration to which $\dot{V}_l = \dot{V}_s = 50$~L/min is adopted.
+
+Figures~\ref{fig:batchgor1} and \ref{fig:batchgor2} illustrate the dynamic behavior of
+the $GOR$ and $SEC_{th}$ metrics for the batch operation mode and for two different
+maximum allowed salt concentration of the brine in the mixing tank analyzed, $C_{s,max}$
+(120~g$_s$/L$_{mix}$ and 260~g$_s$/L$_{mix}$, respectively). The averaged values
+indicated in these figures were obtained for an operating time of 8~hours.
+
+\begin{figure}[htbp]
+  \centering
+  \fbox{\textit{Figure 8 -- Evolution of the instantaneous GOR and SECth for $C_{s,max} = 120$~g$_s$/L$_{mix}$.}}
+  \caption{Evolution of the instantaneous a)~$GOR$ and b)~$SEC_{th}$, for
+  $C_{s,max} = 120$~g$_s$/L$_{mix}$. Batch operating mode.}
+  \label{fig:batchgor1}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \fbox{\textit{Figure 9 -- Evolution of the instantaneous GOR and SECth for $C_{s,max} = 260$~g$_s$/L$_{mix}$.}}
+  \caption{Evolution of the instantaneous a)~$GOR$ and b)~$SEC_{th}$, for
+  $C_{s,max} = 260$~g$_s$/L$_{mix}$. Batch operating mode.}
+  \label{fig:batchgor2}
+\end{figure}
+
+Figure~\ref{fig:modes} illustrates the temporal evolution of the main DCMD system
+parameters for the different desalination system operating modes (batch, semi-batch,
+volume-controlling, continuous and steady-state): mixture salt concentration in the
+mixing tank $C_{s,mix}$, volumetric flow rate of the produced distillate $\dot{V}_{jwl}$,
+mixture volume in the mixing tank $V_{mix}$, mixture temperature in the mixing tank
+$T_{mix}$, volumetric flow rate of the brackish water well $\dot{V}_{well}$, and
+rejection fraction $\lambda$.
+
+\begin{figure}[htbp]
+  \centering
+  \fbox{\textit{Figure 10 -- Dynamic evolution of the instantaneous desalination system parameters
+  for different operating modes.}}
+  \caption{Dynamic evolution of the instantaneous desalination system parameters for
+  different operating modes and $C_{s,max} = 120$~g$_s$/L$_{mix}$: a)~$C_{s,mix}$,
+  b)~$\dot{V}_{jwl}$, c)~$V_{mix}$, d)~$T_{mix}$, e)~$\lambda$, and f)~$\dot{V}_{well}$.}
+  \label{fig:modes}
+\end{figure}
+
+According to these figures, the cycling time for the batch mode is about 1789~s ($\approx
+30$~min) while for the V-control and semi-batch modes are 4800~s ($\approx 1$~h~20~min)
+and 6090~s ($\approx 1$~h~41~min), respectively.
+
+In an attempt to identify the most appropriate operating mode of the DCMD desalination
+system, comparisons are performed in Figures~\ref{fig:sec} and \ref{fig:rr}, where the
+averaged specific thermal energy cost, $SEC_{th}$, and water recovery ratio, $RR$, are
+displayed, respectively.
+
+\begin{figure}[htbp]
+  \centering
+  \fbox{\textit{Figure 11 -- Effect of the system operation mode on the averaged specific thermal energy cost.}}
+  \caption{Effect of the system operation mode on the averaged specific thermal energy
+  cost, $SEC_{th}$, for different mixture salinity.}
+  \label{fig:sec}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \fbox{\textit{Figure 12 -- Effect of the system operation mode on the water recovery ratio.}}
+  \caption{Effect of the system operation mode on the water recovery ratio, $RR$, for
+  different mixture salinity.}
+  \label{fig:rr}
+\end{figure}
+
+Overall, according to these figures, one must seek a balance between the specific energy
+cost and the water recovery ratio, since there exist, for the same maximum operational
+salinity, a trade-off between these metrics. When it comes to the energy cost, and for
+the same limiting mixture salinity, the best operating mode is the batch, followed by
+the semi-batch, steady-state, and continuous modes, as indicated in the literature
+\citep{SwaminathanLienhard2018}. On the other hand, when it comes to water recovery,
+Figure~\ref{fig:rr} reveals that the best choice is the semi-batch operating mode,
+followed by the V-control and batch modes.
+
+Figure~\ref{fig:voldist} shows the potential of each operating mode in producing distillate
+water when the desalination system is operated for 8~h.
+
+\begin{figure}[htbp]
+  \centering
+  \fbox{\textit{Figure 13 -- Effect of the system operation mode on the produced volume
+  of distillate water.}}
+  \caption{Effect of the system operation mode on the produced volume of distillate water,
+  for different mixture salinity.}
+  \label{fig:voldist}
+\end{figure}
+
+In general, the desalination system can produce up to 1{,}200~L of distillate water
+running in any of the operating modes for the lower salinity level. On the other hand,
+when the salinity increases, it impacts negatively, especially for the steady-states modes
+(continuous and steady-state), when only about 750~L of distillate water is produced.
+
+Therefore, if the desalination system must be implemented in areas with hydrologic
+seasonal stress, as the semi-arid region of the Brazilian northeastern, the results point
+out that the semi-batch could be the preferred choice for brackish water desalination,
+since the main interest is in saving salt water from the well.
+
+% ----------------------------------------------------------------
+\section{Conclusions}
+
+The present work developed a mathematical modeling and computer simulation of a DCMD
+desalination system with double heat recovery from the distillate stream and the feed
+stream, together with total or partial recirculation of the retentate. The main goal was
+to employ the developed code to identify the best scenarios for operation of the system
+in terms of maximizing its thermal efficiency at the same time minimizing the use of
+brackish water from wells, seeking optimized production of the amount of distilled water.
+
+In general, the following conclusions can be summarized from the present results:
+
+\begin{itemize}
+  \item Heat recovery from the distillate stream already produces a significant increase
+    in the energy efficiency of the desalination system, being a mandatory condition for
+    operation of DCMD-based systems.
+
+  \item Use of an additional heat exchanger to recover heat from the retentate stream
+    also improves the energy efficiency of the process, especially when the system
+    operates in the FLR condition with mass flow rate near the critical mass flow rate.
+
+  \item Peaks in $GOR$ values and lows in $SEC$ values can be observed when the well and
+    an external heat exchanger coupled to its stream operate simultaneously, so double
+    heat recovery and partial recirculation of the retentate play an important role in
+    the competitiveness of the membrane distillation process compared to other forms of
+    desalination, especially in long operation processes.
+
+  \item The amount of heat supplied to the system is strongly impacted by the rejection
+    fraction of the retentate stream.
+
+  \item The system operating mode has a strong impact on the energy consumption and water
+    recovery of the DCMD desalination system.
+
+  \item The lowest specific thermal energy cost is associated with the batch operation
+    mode of the desalination plant, however, in regions with hydrologic seasonal stress,
+    the results point out that the semi-batch could be the preferred choice for brackish
+    water saving. Therefore, its choice must be based on information as where the system
+    has to be implanted and what are the availability of energy and brackish water
+    salinity.
+\end{itemize}
+
+Extension to other desalination MD methods, like AGMD and V-AGMD, are currently in
+development, in order to simulate the entire experimental TRL-6 desalination unit
+installed in the LabMEMS/UFRJ.
+
+% ----------------------------------------------------------------
+\bibliographystyle{abbrvnat}
+\bibliography{ref}
+
+\end{document}
