@@ -6,45 +6,49 @@ The style file: abbrvnat.bst
 Reallocating 'name_of_file' (item size: 1) to 4 items.
 Database file #1: ref.bib
 Warning--I didn't find a database entry for "Gustafson2018"
-You've used 43 entries,
+Warning--I didn't find a database entry for "LawsonLloyd1997"
+Warning--I didn't find a database entry for "GarciaPayoIzquierdoGil2004"
+Warning--I didn't find a database entry for "MackieMeares1955"
+Warning--I didn't find a database entry for "Curcio2022"
+You've used 42 entries,
             2773 wiz_defined-function locations,
-            897 strings with 12573 characters,
-and the built_in function-call counts, 21507 in all, are:
-= -- 1939
-> -- 1350
-< -- 15
-+ -- 454
-- -- 411
-* -- 1878
-:= -- 3354
-add.period$ -- 130
-call.type$ -- 43
-change.case$ -- 265
-chr.to.int$ -- 43
-cite$ -- 86
-duplicate$ -- 880
-empty$ -- 1669
-format.name$ -- 472
-if$ -- 4405
+            895 strings with 12296 characters,
+and the built_in function-call counts, 20844 in all, are:
+= -- 1884
+> -- 1282
+< -- 14
++ -- 432
+- -- 390
+* -- 1817
+:= -- 3245
+add.period$ -- 126
+call.type$ -- 42
+change.case$ -- 255
+chr.to.int$ -- 42
+cite$ -- 84
+duplicate$ -- 860
+empty$ -- 1636
+format.name$ -- 446
+if$ -- 4271
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 42
-newline$ -- 224
-num.names$ -- 172
-pop$ -- 453
+missing$ -- 41
+newline$ -- 218
+num.names$ -- 168
+pop$ -- 437
 preamble$ -- 1
-purify$ -- 223
+purify$ -- 214
 quote$ -- 0
-skip$ -- 667
+skip$ -- 644
 stack$ -- 0
-substring$ -- 1045
-swap$ -- 43
+substring$ -- 1040
+swap$ -- 42
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 468
+type$ -- 457
 warning$ -- 0
-while$ -- 204
+while$ -- 200
 width$ -- 0
-write$ -- 569
-(There was 1 warning)
+write$ -- 554
+(There were 5 warnings)

@@ -1,4 +1,4 @@
-\begin{thebibliography}{43}
+\begin{thebibliography}{42}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -19,6 +19,11 @@ A.~Alkhudhiri, N.~Darwish, and N.~Hilal.
 \newblock Membrane distillation: A comprehensive review.
 \newblock \emph{Desalination}, 287:\penalty0 2--18, 2012.
 
+\bibitem[Beeckman(1990)]{Beeckman1990}
+J.~Beeckman.
+\newblock Mathematical description of heterogeneous materials.
+\newblock \emph{Chemical Engineering Science}, 45:\penalty0 2603--2610, 1990.
+
 \bibitem[Charcosset(2009)]{Charcosset2009}
 C.~Charcosset.
 \newblock A review of membrane processes and renewable energies for
@@ -31,16 +36,6 @@ K.~S.~S. Christie, T.~Horseman, and S.~Lin.
   recovery and the use of waste-heat.
 \newblock \emph{Environment International}, 138:\penalty0 105588, 2020.
 
-\bibitem[Curcino et~al.(2022)Curcino, {Costa J{\'u}nior}, {C{\'a}rdenas
-  G{\'o}mez}, {Pe{\~n}aranda Chenche}, Lima, Naveira-Cotta, and
-  Cotta]{Curcino2022}
-I.~V. Curcino, P.~R.~S. {Costa J{\'u}nior}, A.~O. {C{\'a}rdenas G{\'o}mez},
-  L.~E. {Pe{\~n}aranda Chenche}, J.~A. Lima, C.~P. Naveira-Cotta, and R.~M.
-  Cotta.
-\newblock Analysis of effective thermal conductivity and tortuosity modeling in
-  membrane distillation simulation.
-\newblock \emph{Micro and Nano Engineering}, 17:\penalty0 100165, 2022.
-
 \bibitem[Curcio and Drioli(2005)]{Curcio2005}
 E.~Curcio and E.~Drioli.
 \newblock Membrane distillation and related operations -- a review.
@@ -51,6 +46,13 @@ E.~Curcio and E.~Drioli.
 E.~Drioli, A.~Ali, and F.~Macedonio.
 \newblock Membrane distillation: Recent developments and perspectives.
 \newblock \emph{Desalination}, 356:\penalty0 56--84, 2015.
+
+\bibitem[Elias-Kohav et~al.(1991)Elias-Kohav, Moshe, and Avnir]{EliasKohav1991}
+T.~Elias-Kohav, S.~Moshe, and D.~Avnir.
+\newblock Steady-state diffusion and reactions in catalytic fractal porous
+  media.
+\newblock \emph{Chemical Engineering Science}, 46\penalty0 (11):\penalty0
+  2787--2798, 1991.
 
 \bibitem[Elimelech and Phillip(2011)]{Elimelech2011}
 M.~Elimelech and W.~A. Phillip.
@@ -63,14 +65,6 @@ H.~Fan and Y.~Peng.
 \newblock Application of symmetric {PVDF} membranes in desalination and
   comparison of the {VMD} and {DCMD} processes.
 \newblock \emph{Chemical Engineering Science}, 79:\penalty0 94--102, 2012.
-
-\bibitem[Garc{\'i}a-Payo and Izquierdo-Gil(2004)]{GarciaPayo2004}
-M.~C. Garc{\'i}a-Payo and M.~A. Izquierdo-Gil.
-\newblock Thermal resistance technique for measuring the thermal conductivity
-  of thin microporous membranes.
-\newblock \emph{Journal of Physics D: Applied Physics}, 37\penalty0
-  (21):\penalty0 3008--3016, 2004.
-\newblock \doi{10.1088/0022-3727/37/21/011}.
 
 \bibitem[Ghanbarian et~al.(2013)Ghanbarian, Hunt, Ewing, and
   Sahimi]{Ghanbarian2013}
@@ -158,11 +152,6 @@ Y.~D. Kim, K.~Thu, and S.~H. Choi.
 \newblock Solar-assisted multi-stage vacuum membrane distillation system with
   heat recovery unit.
 \newblock \emph{Desalination}, 367:\penalty0 161--171, 2015.
-
-\bibitem[Lawson and Lloyd(1997)]{Lawson1997}
-K.~W. Lawson and D.~R. Lloyd.
-\newblock Membrane distillation.
-\newblock \emph{Journal of Membrane Science}, 124:\penalty0 1--25, 1997.
 
 \bibitem[Lee et~al.(2011)Lee, He, Song, and Sirkar]{Lee2011}
 H.~Y. Lee, F.~He, L.~M. Song, and K.~K. Sirkar.
