@@ -601,12 +601,6 @@ m
 \label{eq:m-gamma}
 \end{equation}
 
-\begin{equation}
-\varepsilon_s
-=
-\frac{\pi r_v^2-N_{fbr}\,\pi r_s^2}{\pi r_v^2}
-\label{eq:pors}
-\end{equation}
 
 Here, $\varepsilon_\gamma$ is the porosity of phase $\gamma$ (with $\gamma=l$ for the
 lumen phase and $\gamma=s$ for the shell phase), $N_{fbr}$ is the number of fibers in
@@ -796,7 +790,7 @@ T_s(L,t)
 =
 T_{e,s}
 =
-T_{s,0},
+T_{5},
 \qquad
 z=L,
 \qquad
@@ -949,6 +943,58 @@ Thus, the following relationships are obtained.
 \subsection*{Temperatures}
 
 \begin{equation}
+T_{1} = T_{\mathrm{well}}
+\qquad \text{(input)}
+\label{eq:T1}
+\end{equation}
+
+\begin{equation}
+T_{2}
+=
+\frac{1}{c_{p2}}
+\left[
+c_{p1}T_{1}
++
+\varepsilon_{\mathrm{HX},2}
+\frac{C_{\mathrm{MIN},2}}
+{\rho_{1}\dot{V}_{1}}
+\left(T_{6}-T_{1}\right)
+\right]
+\label{eq:T2}
+\end{equation}
+
+\begin{equation}
+T_{3} = T_{\mathrm{mix}}
+\label{eq:T3}
+\end{equation}
+
+\begin{equation}
+T_{4}
+=
+\frac{1}{c_{p4}}
+\left[
+c_{p3}T_{3}
++
+\varepsilon_{\mathrm{HX},1}
+\frac{C_{\mathrm{MIN},1}}
+{\rho_{3}\dot{V}_{3}}
+\left(T_{11}-T_{3}\right)
+\right]
+\label{eq:T4}
+\end{equation}
+
+\begin{equation}
+T_{5} = T_{e_s}
+\qquad \text{(input)}
+\label{eq:T5}
+\end{equation}
+
+\begin{equation}
+T_{6} = T_{s}(0,t)
+\label{eq:T6}
+\end{equation}
+
+\begin{equation}
 T_9
 =
 T_8
@@ -961,7 +1007,7 @@ c_{p,6}T_6
 -
 \varepsilon_{\mathrm{HX},2}
 \frac{C_{\min,2}}
-{\rho_6\dot{V}_6}
+{r_6\dot{V}_6}
 \left(
 T_6-T_1
 \right)
@@ -998,7 +1044,7 @@ c_{p,11}T_{11}
 -
 \varepsilon_{\mathrm{HX},1}
 \frac{C_{\min,1}}
-{\rho_{11}\dot{V}_{11}}
+{r_{11}\dot{V}_{11}}
 \left(
 T_{11}-T_3
 \right)
@@ -1115,7 +1161,7 @@ l_{\mathrm{col}}\dot{V}_{12}
 \frac{
 j_{wl}A_{\mathrm{memb}}
 }{
-\rho_{\mathrm{H_2O}}
+r_{\mathrm{H_2O}}
 }
 \label{eq:Vjwl}
 \end{equation}
@@ -1207,7 +1253,7 @@ definitions of the heat-exchanger effectivenesses:
 }
 =
 \frac{
-\rho_3\dot{V}_3
+r_3\dot{V}_3
 \left(
 c_{p,4}T_4-c_{p,3}T_3
 \right)
@@ -1220,7 +1266,7 @@ T_{11}-T_3
 \\
 =
 \frac{
-\rho_{11}\dot{V}_{11}
+r_{11}\dot{V}_{11}
 \left(
 c_{p,11}T_{11}-c_{p,12}T_{12}
 \right)
@@ -1243,7 +1289,7 @@ T_{11}-T_3
 }
 =
 \frac{
-\rho_1\dot{V}_1
+r_1\dot{V}_1
 \left(
 c_{p,2}T_2-c_{p,1}T_1
 \right)
@@ -1256,7 +1302,7 @@ T_6-T_1
 \\
 =
 \frac{
-\rho_6\dot{V}_6
+r_6\dot{V}_6
 \left(
 c_{p,6}T_6-c_{p,7}T_7
 \right)
@@ -1276,9 +1322,9 @@ C_{\min,1}
 =
 \min
 \left\{
-\rho_3\dot{V}_3c_{p,3},
+r_3\dot{V}_3c_{p,3},
 \,
-\rho_{11}\dot{V}_{11}c_{p,11}
+r_{11}\dot{V}_{11}c_{p,11}
 \right\}
 \label{eq:Cmin1}
 \end{equation}
@@ -1288,28 +1334,18 @@ C_{\min,2}
 =
 \min
 \left\{
-\rho_1\dot{V}_1c_{p,1},
+r_1\dot{V}_1c_{p,1},
 \,
-\rho_6\dot{V}_6c_{p,6}
+r_6\dot{V}_6c_{p,6}
 \right\}.
 \label{eq:Cmin2}
 \end{equation}
 
-In the salinity equations, $\alpha_{\mathrm{memb}}$ represents the
-effectiveness of the membrane in retaining salt, that is, in preventing salt
-transport into the distillate stream. In the present study, complete salt
-retention is assumed:
-
-\begin{equation}
-\alpha_{\mathrm{memb}}
-=
-1.
-\label{eq:membrane-salt-retention}
-\end{equation}
-
-The thermophysical properties of the brackish well water are evaluated at each
-position of the system as functions of the local temperature and salinity,
-according to the correlations proposed by \citet{Sparrow2003}.
+In the salinity equations, $\alpha_{\mathrm{memb}}$ is the membrane effectiveness
+in retaining salt, thereby preventing salt from passing into the distillate stream. 
+In the present study, it was assumed to be equal to \(100\%\), i.e., $\alpha_{\mathrm{memb}} = 1$. 
+The properties of the brackish well water are determined at each point of the system as functions of
+the local temperature and salinity \citep{Sparrow2003}.
 
 The membrane-interface temperatures along the axial direction of the DCMD
 module, $T_{m,l}(z,t)$ and $T_{m,s}(z,t)$, required in
@@ -1317,10 +1353,8 @@ Equations~\eqref{eq:lumen-energy-balance} and
 \eqref{eq:shell-energy-balance}, are evaluated iteratively and dynamically
 within the numerical routine used to solve the system of differential
 equations. These temperatures are obtained by equating the local heat-transfer
-rates in the feed, membrane, and distillate regions.
-
-The local convective heat-transfer rate from the shell-side stream to the
-membrane surface is
+rates in the feed, membrane, and distillate regions.The local convective heat-transfer 
+rate from the shell-side stream to the membrane surface is:
 
 \begin{equation}
 \dot{Q}_s
@@ -1490,9 +1524,8 @@ the DCMD module must be modeled to determine the water-vapor mass flux through
 the membrane, $j_{wl}$. Following the procedure adopted by
 \citet{Lisboa2021}, the Dusty Gas Model proposed by
 \citet{LawsonLloyd1997}, one of the most widely used models for predicting
-distilled-water transport through porous membranes, is employed.
-
-The molar transport of water vapor through the membrane pores is described by
+distilled-water transport through porous membranes, is employed. The molar transport of water 
+vapor through the membrane pores is described by
 
 \begin{equation}
 \frac{N_w}{D_w^k}
@@ -1513,9 +1546,8 @@ $p_a$ is the partial pressure of air inside the membrane pores, $p_w$ is the
 partial pressure of water vapor, $D_w^k$ is the Knudsen diffusivity of water
 vapor, $D_{wa}^{0}$ is the molecular diffusivity of water vapor in air, $R$ is
 the universal gas constant, and $T_m$ is the average thermodynamic temperature
-at each axial position along the membrane.
-
-Air is assumed to remain stationary inside the membrane pores, such that
+at each axial position along the membrane. Air is assumed to remain stationary 
+inside the membrane pores, such that
 
 \begin{equation}
 N_a
@@ -1615,9 +1647,8 @@ a_\gamma p_{v,\gamma},
 \end{equation}
 
 where $p_{v,\gamma}$ is the saturation vapor pressure evaluated at the
-corresponding membrane-interface temperature using the Antoine equation.
-
-The activity coefficient is calculated as
+corresponding membrane-interface temperature using the Antoine equation. The activity 
+coefficient is calculated as
 
 \begin{equation}
 a_\gamma
@@ -1723,9 +1754,7 @@ Several tortuosity models are available in the literature
 \citep{Ghanbarian2013}. \citet{Kim2021} analyzed eleven tortuosity models,
 including eight geometrical models based on Euclidean structures, such as
 cubes, spheres, and cylinders, and three models based on the fractal theory of
-porous media.
-
-For the geometrical model proposed by \citet{MackieMeares1955}, the membrane
+porous media. For the geometrical model proposed by \citet{MackieMeares1955}, the membrane
 tortuosity is
 
 \begin{equation}
@@ -1775,7 +1804,7 @@ The Bruggeman model is given by
 \label{eq:tortuosity-bruggeman}
 \end{equation}
 
-According to \citet{Curcio2022}, who evaluated several effective-thermal-
+According to \citep{Curcino2022}, who evaluated several effective-thermal-
 conductivity and tortuosity models for membrane-distillation simulations in
 flat-sheet and hollow-fiber configurations, an appropriate model should be
 selected based on the known morphological and structural properties of the
@@ -1789,9 +1818,8 @@ To evaluate the desalination system and quantify improvements in the energy
 efficiency of the membrane-distillation process, the thermal efficiency,
 $\eta_{th}$, gain-output ratio, $\mathrm{GOR}$, specific thermal energy
 consumption, $\mathrm{SEC}_{th}$, and water recovery ratio, $\mathrm{RR}$, are
-calculated under the different operating scenarios.
-
-The thermal efficiency of the membrane is defined as
+calculated under the different operating scenarios. The thermal efficiency of 
+the membrane is defined as:
 
 \begin{equation}
 \eta_{th}
@@ -2017,22 +2045,20 @@ must be continuously withdrawn from the system at a specific fraction rejection 
 that depends on the MD module performance. The make-up water from the well
 ($\dot{V}_{well}$) is simultaneously added to the tank at a proportional flow rate that
 maintains the salinity of the stream at the MD module exit, which is associated with the corresponding
-rejection fraction.
-
-The rejection fraction and the volumetric flow rate from the well are obtained from
+rejection fraction.The rejection fraction and the volumetric flow rate from the well are obtained from
 the following salt and total-mass balances applied to the mixing tank:
 
 \begin{equation}
 \lambda
 =
-1-
 \frac{
-\dot{V}_{jwl}\,C_{s,well}
+\left(f_{3}-f_{2}\right)\dot{V}_{\mathrm{well}}
++
+\left(f_{3}-f_{8}\right)\dot{V}_{7}
 }{
-\left(\dot{V}_s-\dot{V}_{jwl}\right)
-\left(C_{s6}-C_{s,well}\right)
+\left(f_{2}-f_{8}\right)\dot{V}_{7}
 }
-\label{eq:lambda}
+\label{eq:l}
 \end{equation}
 
 \begin{equation}
@@ -2049,22 +2075,26 @@ To simulate a steady-state condition with no recirculation, it is sufficient to 
 $\lambda=\lambda_0=\lambda_1=1$ and $\dot{V}_{well}=\dot{V}_s$ all the time
 during the simulations. In this situation, all retentate leaving the DCMD module is
 rejected and the system is continuously fed by the well at constant feed flow rate and
-salinity.
+salinity.As will be shown, if this mode of operation is mandatory, as in the case studied 
+by \citet{Sampaio2022}, the use of the second heat exchanger (HX-2) to recover heat from 
+the retentate stream before it is flushed out leads to an improvement in the performance
+of the desalination system.
 
-In the mixing-tank volume-control operating mode, minimum and maximum allowable tank
-volumes are specified as operating limits. The salinity of the water in the mixing tank
-($C_{s,mix}(t)$) is continuously increasing with the distillate production, and its
-volume ($V_{mix}(t)$) decreases. When the minimum volume is reached ($V_{min}$), the
-tank is filled with brackish water from the well up to the maximum volume ($V_{max}$)
-previously chosen. The process is then repeated until the desalination operation is completed.
+Because these operating modes are inherently transient, the distillate is continuously 
+withdrawn from the system, while the concentrated stream leaving the MD module, whose 
+salinity progressively increases, is either recirculated to the mixing tank or discharged
+from the system, depending on the value of $\lambda$. In both cases, the use of HX-2 to recover 
+thermal energy from the retentate stream before its discharge improves the overall energy efficiency 
+of the desalination system, as demonstrated later.
 
-In the mixing-tank salinity-control operating mode, minimum and maximum allowable
-salinities are specified as operating limits. The salinity of the water in the
-mixing tank ($C_{s,mix}(t)$) is continuously increasing with the distillate production,
-while its volume ($V_{mix}(t)$) decreases since there is no brackish water flow from the
-well. When the maximum allowable salinity is reached ($C_{s,max}$), the pump from
-the well is turned on to feed the mixing tank until the salinity of the water contained
-in it falls to the minimum predefined value.
+In the volume-controlled mixing-tank operating mode, predefined minimum and maximum tank volumes are 
+established as operational limits. As distillate is produced, the salinity of the solution in the mixing
+tank, $c_{s,\mathrm{mix}}(t)$, continuously increases, whereas the liquid volume, $V_{\mathrm{mix}}(t)$, 
+decreases. When the minimum allowable volume, $V_{\min}$, is reached, brackish water from the well is 
+supplied to the tank until the maximum predefined volume, $V_{\max}$, is restored. This cycle is repeated 
+throughout the desalination process. If the solution in the mixing tank reaches a predefined maximum operating 
+salinity, the tank contents are completely discharged, corresponding to $\lambda = 1$. The tank is then
+refilled with brackish well water until the initial volume, $V_{\mathrm{mix},0}$, is restored.
 
 % ----------------------------------------------------------------
 \section{Results}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.7)  15 JUL 2026 17:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.7)  16 JUL 2026 14:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -902,10 +902,10 @@ Package pdftex.def Info: IMAGENS/2.jpg  used on input line 571.
 <IMAGENS/3.png, id=243, 256.887pt x 106.1055pt>
 File: IMAGENS/3.png Graphic file (type png)
 <use IMAGENS/3.png>
-Package pdftex.def Info: IMAGENS/3.png  used on input line 619.
+Package pdftex.def Info: IMAGENS/3.png  used on input line 613.
 (pdftex.def)             Requested size: 472.03123pt x 194.97743pt.
  [12 <./IMAGENS/2.jpg>] [13 <./IMAGENS/3.png>] [14] [15] [16] [17] [18]
-Overfull \hbox (2.23503pt too wide) in paragraph at lines 1314--1321
+Overfull \hbox (2.23503pt too wide) in paragraph at lines 1350--1358
 []\T1/cmr/m/n/14.4 The membrane-interface tem-per-a-tures along the ax-ial di-r
 ec-tion of the DCMD
  []
@@ -913,102 +913,99 @@ ec-tion of the DCMD
 [19] [20]
 
 Package natbib Warning: Citation `LawsonLloyd1997' on page 21 undefined on inpu
-t line 1492.
+t line 1526.
 
 [21] [22] [23]
 
 Package natbib Warning: Citation `GarciaPayoIzquierdoGil2004' on page 24 undefi
-ned on input line 1682.
+ned on input line 1713.
 
 [24]
 
 Package natbib Warning: Citation `MackieMeares1955' on page 25 undefined on inp
-ut line 1728.
-
-
-Package natbib Warning: Citation `Curcio2022' on page 25 undefined on input lin
-e 1778.
+ut line 1757.
 
 [25] [26] [27] [28] [29] [30]
-Overfull \hbox (20.19693pt too wide) in paragraph at lines 2149--2165
+Overfull \hbox (20.19693pt too wide) in paragraph at lines 2188--2204
  [][] 
  []
 
-[31]
-<IMAGENS/4.png, id=494, 256.23pt x 219.1095pt>
+[31] [32]
+<IMAGENS/4.png, id=509, 256.23pt x 219.1095pt>
 File: IMAGENS/4.png Graphic file (type png)
 <use IMAGENS/4.png>
-Package pdftex.def Info: IMAGENS/4.png  used on input line 2183.
+Package pdftex.def Info: IMAGENS/4.png  used on input line 2222.
 (pdftex.def)             Requested size: 330.42041pt x 282.56216pt.
-<IMAGENS/5.png, id=506, 261.1575pt x 196.443pt>
+ [33 <./IMAGENS/4.png>]
+<IMAGENS/5.png, id=527, 261.1575pt x 196.443pt>
 File: IMAGENS/5.png Graphic file (type png)
 <use IMAGENS/5.png>
-Package pdftex.def Info: IMAGENS/5.png  used on input line 2201.
+Package pdftex.def Info: IMAGENS/5.png  used on input line 2240.
 (pdftex.def)             Requested size: 330.42041pt x 248.54161pt.
- [32] [33 <./IMAGENS/4.png>]
-<IMAGENS/6.png, id=532, 233.235pt x 196.443pt>
+ [34 <./IMAGENS/5.png>]
+<IMAGENS/6.png, id=544, 233.235pt x 196.443pt>
 File: IMAGENS/6.png Graphic file (type png)
 <use IMAGENS/6.png>
-Package pdftex.def Info: IMAGENS/6.png  used on input line 2381.
+Package pdftex.def Info: IMAGENS/6.png  used on input line 2420.
 (pdftex.def)             Requested size: 330.42041pt x 278.31552pt.
- [34 <./IMAGENS/5.png>]
-<IMAGENS/7.png, id=540, 724.20563pt x 338.01282pt>
+ [35]
+<IMAGENS/7.png, id=552, 724.20563pt x 338.01282pt>
 File: IMAGENS/7.png Graphic file (type png)
 <use IMAGENS/7.png>
-Package pdftex.def Info: IMAGENS/7.png  used on input line 2399.
+Package pdftex.def Info: IMAGENS/7.png  used on input line 2438.
 (pdftex.def)             Requested size: 472.03203pt x 220.31432pt.
- [35]
-
-LaTeX Warning: Text page 36 contains only floats.
-
-[36 <./IMAGENS/6.png> <./IMAGENS/7.png>]
-<IMAGENS/8.PNG, id=559, 711.4078pt x 337.26pt>
+ [36 <./IMAGENS/6.png>] [37 <./IMAGENS/7.png>] [38]
+<IMAGENS/8.PNG, id=587, 711.4078pt x 337.26pt>
 File: IMAGENS/8.PNG Graphic file (type png)
 <use IMAGENS/8.PNG>
-Package pdftex.def Info: IMAGENS/8.PNG  used on input line 2750.
+Package pdftex.def Info: IMAGENS/8.PNG  used on input line 2789.
 (pdftex.def)             Requested size: 472.03123pt x 223.7862pt.
- [37]
-<IMAGENS/9.PNG, id=570, 706.13812pt x 337.26pt>
+<IMAGENS/9.PNG, id=588, 706.13812pt x 337.26pt>
 File: IMAGENS/9.PNG Graphic file (type png)
 <use IMAGENS/9.PNG>
-Package pdftex.def Info: IMAGENS/9.PNG  used on input line 2765.
+Package pdftex.def Info: IMAGENS/9.PNG  used on input line 2804.
 (pdftex.def)             Requested size: 472.03123pt x 225.44841pt.
-<IMAGENS/10.png, id=572, 715.92468pt x 313.17pt>
+ [39 <./IMAGENS/8.PNG> <./IMAGENS/9.PNG>]
+<IMAGENS/10.png, id=597, 715.92468pt x 313.17pt>
 File: IMAGENS/10.png Graphic file (type png)
 <use IMAGENS/10.png>
-Package pdftex.def Info: IMAGENS/10.png  used on input line 2793.
+Package pdftex.def Info: IMAGENS/10.png  used on input line 2832.
 (pdftex.def)             Requested size: 472.03123pt x 206.48735pt.
-<IMAGENS/11.png, id=573, 719.68875pt x 319.1925pt>
+<IMAGENS/11.png, id=598, 719.68875pt x 319.1925pt>
 File: IMAGENS/11.png Graphic file (type png)
 <use IMAGENS/11.png>
-Package pdftex.def Info: IMAGENS/11.png  used on input line 2813.
+Package pdftex.def Info: IMAGENS/11.png  used on input line 2852.
 (pdftex.def)             Requested size: 472.03123pt x 209.35753pt.
-<IMAGENS/12.png, id=574, 716.6775pt x 322.95656pt>
+<IMAGENS/12.png, id=599, 716.6775pt x 322.95656pt>
 File: IMAGENS/12.png Graphic file (type png)
 <use IMAGENS/12.png>
-Package pdftex.def Info: IMAGENS/12.png  used on input line 2833.
+Package pdftex.def Info: IMAGENS/12.png  used on input line 2872.
 (pdftex.def)             Requested size: 472.03123pt x 212.7134pt.
-<IMAGENS/13.PNG, id=578, 558.58687pt x 283.81032pt>
+<IMAGENS/13.PNG, id=603, 558.58687pt x 283.81032pt>
 File: IMAGENS/13.PNG Graphic file (type png)
 <use IMAGENS/13.PNG>
-Package pdftex.def Info: IMAGENS/13.PNG  used on input line 2860.
+Package pdftex.def Info: IMAGENS/13.PNG  used on input line 2899.
 (pdftex.def)             Requested size: 472.03123pt x 239.84111pt.
- [38]
-<IMAGENS/14.PNG, id=591, 528.47438pt x 278.54062pt>
+<IMAGENS/14.PNG, id=604, 528.47438pt x 278.54062pt>
 File: IMAGENS/14.PNG Graphic file (type png)
 <use IMAGENS/14.PNG>
-Package pdftex.def Info: IMAGENS/14.PNG  used on input line 2877.
+Package pdftex.def Info: IMAGENS/14.PNG  used on input line 2916.
 (pdftex.def)             Requested size: 472.03123pt x 248.79291pt.
- [39 <./IMAGENS/8.PNG> <./IMAGENS/9.PNG>] [40 <./IMAGENS/10.png> <./IMAGENS/11.
-png>]
-<IMAGENS/15.PNG, id=610, 529.98pt x 282.30469pt>
+
+[40 <./IMAGENS/10.png>] [41 <./IMAGENS/11.png> <./IMAGENS/12.png>] [42 <./IMAGE
+NS/13.PNG> <./IMAGENS/14.PNG>]
+<IMAGENS/15.PNG, id=633, 529.98pt x 282.30469pt>
 File: IMAGENS/15.PNG Graphic file (type png)
 <use IMAGENS/15.PNG>
-Package pdftex.def Info: IMAGENS/15.PNG  used on input line 2905.
+Package pdftex.def Info: IMAGENS/15.PNG  used on input line 2944.
 (pdftex.def)             Requested size: 472.03123pt x 251.4399pt.
- [41 <./IMAGENS/12.png> <./IMAGENS/13.PNG>] [42 <./IMAGENS/14.PNG> <./IMAGENS/1
-5.PNG>] [43] (main.bbl
-[44] [45] [46] [47] [48])
+ [43 <./IMAGENS/15.PNG>] (main.bbl [44]
+Underfull \hbox (badness 1117) in paragraph at lines 41--47
+[]\T1/cmr/m/n/14.4 I. V. Cur-cino, P. R. S. Costa Júnior, A. O. Cár-de-nas Góme
+z, L. E.
+ []
+
+[45] [46] [47] [48])
 
 Package natbib Warning: There were undefined citations.
 
@@ -1017,21 +1014,17 @@ Package natbib Warning: There were undefined citations.
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 69DEC390DD8E027F3A8FB97B27CB37E0;1616.
  ) 
 Here is how much of TeX's memory you used:
- 17351 strings out of 467870
- 288078 string characters out of 5417872
- 789096 words of memory out of 5000000
- 45734 multiletter control sequences out of 15000+600000
+ 17366 strings out of 467870
+ 288226 string characters out of 5417872
+ 789382 words of memory out of 5000000
+ 45744 multiletter control sequences out of 15000+600000
  647592 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 110i,19n,107p,417b,652s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 110i,19n,107p,417b,644s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Master\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ect
 i0800.pk> <C:\Users\Master\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi
 600\ecrm0800.pk> <C:\Users\Master\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen
@@ -1063,9 +1056,9 @@ X/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Master/AppData/Local/Prog
 rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Master/AppData/L
 ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Master/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (49 pages, 1623598 bytes).
+Output written on main.pdf (49 pages, 1629166 bytes).
 PDF statistics:
- 1291 PDF objects out of 1440 (max. 8388607)
- 215 named destinations out of 1000 (max. 500000)
+ 1309 PDF objects out of 1440 (max. 8388607)
+ 220 named destinations out of 1000 (max. 500000)
  156 words of extra memory for PDF output out of 10000 (max. 10000000)
 

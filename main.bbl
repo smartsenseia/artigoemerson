@@ -1,4 +1,4 @@
-\begin{thebibliography}{42}
+\begin{thebibliography}{43}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -35,6 +35,15 @@ K.~S.~S. Christie, T.~Horseman, and S.~Lin.
 \newblock Energy efficiency of membrane distillation: simplified analysis, heat
   recovery and the use of waste-heat.
 \newblock \emph{Environment International}, 138:\penalty0 105588, 2020.
+
+\bibitem[Curcino et~al.(2022)Curcino, Costa~J{\'u}nior, C{\'a}rdenas~G{\'o}mez,
+  Pe{\~n}aranda~Chenche, Lima, Naveira-Cotta, and Cotta]{Curcino2022}
+I.~V. Curcino, P.~R.~S. Costa~J{\'u}nior, A.~O. C{\'a}rdenas~G{\'o}mez, L.~E.
+  Pe{\~n}aranda~Chenche, J.~A. Lima, C.~P. Naveira-Cotta, and R.~M. Cotta.
+\newblock Analysis of effective thermal conductivity and tortuosity modeling in
+  membrane distillation simulation.
+\newblock \emph{Micro and Nano Engineering}, 17:\penalty0 100165, 2022.
+\newblock \doi{10.1016/j.mne.2022.100165}.
 
 \bibitem[Curcio and Drioli(2005)]{Curcio2005}
 E.~Curcio and E.~Drioli.

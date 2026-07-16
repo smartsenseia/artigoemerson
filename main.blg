@@ -5,50 +5,53 @@ Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: abbrvnat.bst
 Reallocating 'name_of_file' (item size: 1) to 4 items.
 Database file #1: ref.bib
+Repeated entry---line 98 of file ref.bib
+ : @article{Curcino2022
+ :                     ,
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "Gustafson2018"
 Warning--I didn't find a database entry for "LawsonLloyd1997"
 Warning--I didn't find a database entry for "GarciaPayoIzquierdoGil2004"
 Warning--I didn't find a database entry for "MackieMeares1955"
-Warning--I didn't find a database entry for "Curcio2022"
-You've used 42 entries,
+You've used 43 entries,
             2773 wiz_defined-function locations,
-            895 strings with 12296 characters,
-and the built_in function-call counts, 20844 in all, are:
-= -- 1884
-> -- 1282
+            901 strings with 12629 characters,
+and the built_in function-call counts, 21537 in all, are:
+= -- 1940
+> -- 1348
 < -- 14
-+ -- 432
-- -- 390
-* -- 1817
-:= -- 3245
-add.period$ -- 126
-call.type$ -- 42
-change.case$ -- 255
-chr.to.int$ -- 42
-cite$ -- 84
-duplicate$ -- 860
-empty$ -- 1636
-format.name$ -- 446
-if$ -- 4271
++ -- 454
+- -- 411
+* -- 1886
+:= -- 3359
+add.period$ -- 130
+call.type$ -- 43
+change.case$ -- 265
+chr.to.int$ -- 43
+cite$ -- 86
+duplicate$ -- 881
+empty$ -- 1675
+format.name$ -- 468
+if$ -- 4409
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 41
-newline$ -- 218
-num.names$ -- 168
-pop$ -- 437
+missing$ -- 42
+newline$ -- 224
+num.names$ -- 172
+pop$ -- 454
 preamble$ -- 1
-purify$ -- 214
+purify$ -- 223
 quote$ -- 0
-skip$ -- 644
+skip$ -- 663
 stack$ -- 0
-substring$ -- 1040
-swap$ -- 42
+substring$ -- 1060
+swap$ -- 43
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 457
+type$ -- 468
 warning$ -- 0
-while$ -- 200
+while$ -- 204
 width$ -- 0
-write$ -- 554
-(There were 5 warnings)
+write$ -- 569
+(There was 1 error message)
