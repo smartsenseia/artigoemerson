@@ -1,8 +1,4 @@
 \documentclass[14pt,letterpaper,fleqn]{extarticle}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Encoding and language
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
@@ -10,6 +6,23 @@
 \usepackage{caption}
 \usepackage{graphicx}
 \usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage{booktabs}
+\usepackage{booktabs}
+\usepackage{pdflscape}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{adjustbox}
+\usepackage{caption}
+\usepackage{pdflscape}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{caption}
+\usepackage{array}
+\usepackage{makecell}
 \usepackage{booktabs}
 \usepackage{wrapfig}
 \usepackage{rotating}
@@ -46,6 +59,12 @@
 \usepackage{geometry}
 \usepackage{setspace}
 \usepackage{multicol}
+\usepackage{caption}
+
+\captionsetup{
+    justification=centering,
+    singlelinecheck=false
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Mathematics
@@ -111,7 +130,7 @@
 
 \geometry{
   letterpaper,
-  margin=2.5cm
+  margin=2cm
 }
 
 \setlength{\mathindent}{0pt}
@@ -2113,11 +2132,22 @@ refilled with brackish well water until the initial volume, $V_{\mathrm{mix},0}$
 Before analyzing typical well operation scenarios, the developed computational code is
 verified by comparing its results with available literature data. Since no transient
 results are available, these comparisons are made with data for the steady-state regime.
-
 Table~\ref{tab:membranes} presents the physical and geometric characteristics of the
-membranes and modules employed in the comparisons. The experimental results of
-\citet{Wang2008}, \citet{Yang2011} and numerical results of \citet{Guan2014} and
-\citet{Kim2014} are employed for situations with no heat exchangers.
+membranes and modules employed in the comparisons. 
+
+It should be noted that the experiments reported by \citet{Wang2008} were conducted under 
+a co-current flow arrangement, whereas the present study adoptsa counter-current configuration. 
+Nevertheless, the numerical investigation performed by \citet{Kim2014}, which compared both flow 
+arrangements, indicated that the differences in the predicted performance were small within the 
+range of operating parameters considered.
+
+It is also important to note that, although the simulations presented by \citet{Guan2014} were performed
+under a counter-current flow arrangement, they adopted the HICO configuration, with the hot fluid flowing
+through the lumen and the cold fluid through the shell. In contrast, the present work employs the HOCI
+configuration, in which the hot fluid flows through the shell and the cold fluid through the lumen. 
+According to \citet{Guan2012,Guan2014}, based on the conclusions of \citet{Wirth2002}, no significant 
+differences are expected between the HICO and HOCI configurations provided that similar hydrodynamic 
+conditions are maintained in both fluid streams.
 
 \begin{table}[!htbp]
 \centering
@@ -2165,10 +2195,6 @@ $^c$ Calculated as a function of average velocities.
 $^d$ \citet{Lisboa2021} used $w_{NaCl,s} = 2.5\%$ in their simulations.
 \end{table}
 
-Table~\ref{tab:verify} presents a verification of the results obtained with the present
-work together with the work of \citet{Lisboa2021} and a comparison with the experimental
-results of \citet{Wang2008}.
-
 \begin{table}[!htbp]
 \centering
 \caption{Verification of the computational code with the numerical results of
@@ -2197,11 +2223,13 @@ $T_{e,s}$ [$^\circ$C] & $\Delta T$ [$^\circ$C]
 * Based on the outer radius of the hollow fiber. $T_{Wang\_et\_al.}(2008)$: $T \pm 0.1^\circ$C.
 \end{table}
 
-The results show that the present methodology is consistent with the analyzed physics, at
-least in the steady-state regime, when compared to the experimental results of
-\citet{Wang2008}. This table also shows that the results obtained with the methodology
-in transient regime converge, as would be expected for long times, to the numerical
-results of \citet{Lisboa2021}.
+Table~\ref{tab:verify} presents a verification of the results obtained with the present
+work together with the work of \citet{Lisboa2021} and a comparison with the experimental
+results of \citet{Wang2008}.The results show that the present methodology is consistent 
+with the analyzed physics, at least in the steady-state regime, when compared to the
+experimental results of \citet{Wang2008}. This table also shows that the results obtained 
+with the methodology in transient regime converge, as would be expected for long times, 
+to the numerical results of \citet{Lisboa2021}.
 
 Another verification is illustrated in Figure~\ref{fig:distflux}, which shows a
 comparison of the results obtained in the present work for the produced distillate flux
@@ -2440,348 +2468,386 @@ the maximum water-recovery factor in steady-state, single-pass DCMD systems,
 $R_{\max}$:
 
 \begin{equation}
-\alpha^*
+R_{\max}^{\mathrm{DLR}}
 =
-\left.
-\frac{\dot{m}_s\,c_{p,s}}
-{\dot{m}_l\,c_{p,l}}
-\right|_{\mathrm{critical}}
-\label{eq:alpha-star}
+\frac{\dot{J}_{wl,\mathrm{sys},\max}}
+{\dot{m}_{s}}
+=
+\frac{\eta_{\mathrm{th}}\,c_{pl}}
+{\overline{h}_{\mathrm{vap}}}
+\,\alpha\,\Delta T
+\label{eq:Rmax_DLR}
+\end{equation}
+
+\begin{equation}
+R_{\max}^{\mathrm{FLR}}
+=
+\frac{\dot{J}_{wl,\mathrm{sys},\max}}
+{\dot{m}_{s}}
+=
+\frac{\eta_{\mathrm{th}}\,c_{ps}}
+{\overline{h}_{\mathrm{vap}}}
+\,\Delta T
+\label{eq:Rmax_FLR}
 \end{equation}
 
 \begin{equation}
 \alpha
 =
-\frac{\dot{m}_s\,c_{p,s}}
-{\dot{m}_l\,c_{p,l}}
-\label{eq:alpha}
+\frac{\dot{m}_{l}}
+{\dot{m}_{s}}
+\label{eq:flow_rate_ratio_alpha}
 \end{equation}
 
 \begin{equation}
-R_{\max}^{FLR}
->
-R_{\max}^{DLR}
-\label{eq:Rmax}
+\alpha^{*}
+=
+\frac{c_{ps}}{c_{pl}}
+\left(
+\frac{
+\overline{h}_{\mathrm{vap}}
+-
+\dfrac{c_{ps}\Delta T}{2}
+}{
+\overline{h}_{\mathrm{vap}}
++
+\dfrac{c_{pl}\Delta T}{2}
+}
+\right)
+\label{eq:critical_flow_rate_ratio}
 \end{equation}
 
-For $\alpha<\alpha^*$, the module operates in the DLR regime. Conversely, for
-$\alpha>\alpha^*$, the module operates in the FLR regime.
+For $\alpha < \alpha^{*}$, the module operates in the distillate-limited regime (DLR). In this regime, the distillate flow rate is lower than the feed flow rate, and the distillate temperature increases along the module toward the feed-side threshold temperature, $T_{\mathrm{thres},s}$. This threshold is defined as the temperature at which the distillate stream, with $C_s = 0$, has the same partial vapor pressure as the feed stream at the inlet temperature $T_{e,s}$ and salinity $C_s$. Therefore,
+
+\begin{equation}
+p_v\left(C_s,T_{e,s}\right)
+=
+p_v\left(0,T_{\mathrm{thres},s}\right),
+\label{eq:threshold_temperature_DLR}
+\end{equation}
+
+at which point the transmembrane vapor-pressure difference vanishes.
+
+Conversely, for $\alpha > \alpha^{*}$, the module operates in the feed-limited regime (FLR). In this regime, the feed flow rate is lower than the distillate flow rate, and the feed temperature decreases along the module toward the distillate-side threshold temperature, $T_{\mathrm{thres},l}$. This threshold is defined as the temperature at which the feed stream, with salinity $C_s$, has the same partial vapor pressure as the distillate stream, with $C_s = 0$, at the distillate inlet temperature $T_{e,l}$. Thus,
+
+\begin{equation}
+p_v\left(C_s,T_{\mathrm{thres},l}\right)
+=
+p_v\left(0,T_{e,l}\right).
+\label{eq:threshold_temperature_FLR}
+\end{equation}
+
+When the local temperature difference remains greater than the corresponding threshold 
+temperature difference over the entire MD module, vapor transport occurs throughout the
+whole membrane length. Under these conditions, the process may become limited only by 
+mass transfer, characterizing the mass-transfer-limited regime (MTLR), which may result
+from insufficient membrane area or a very low membrane mass-transfer coefficient. 
+Therefore, provided that mass-transfer limitations are negligible, a DCMD module 
+operates under one of the two thermodynamically limited regimes: DLR or FLR.
+
+According to \citet{Christie2020}, for single-pass counter-current DCMD desalination,
+the FLR configuration is the most suitable operating condition for maximizing water
+recovery. Only under FLR conditions does the distillate stream have sufficient heat-capacity
+flow rate to sustain the maximum attainable evaporation of the feed stream. Consequently,
+
+\begin{equation}
+R_{\max}^{\mathrm{FLR}}
+>
+R_{\max}^{\mathrm{DLR}}.
+\label{eq:Rmax_FLR_greater_DLR}
+\end{equation}
+
+Table~\ref{tab:table6} presents the average theoretical maximum water-recovery ratio, 
+distillate mass flux, temperature-polarization coefficient, and thermal-performance 
+indicators of the DCMD module, including the gain output ratio (GOR) and the specific 
+thermal energy consumption, $\mathrm{SEC}_{\mathrm{th}}$. Three scenarios involving the
+external heat exchangers were investigated for two feed-salinity levels and different
+feed and distillate flow rates: operation without heat recovery, with $\varepsilon_{\mathrm{HX},1} = \varepsilon_{\mathrm{HX},2} = 0$; 
+operation with HX-1 only, with $\varepsilon_{\mathrm{HX},1} = 0.8$ and $\varepsilon_{\mathrm{HX},2} = 0$;
+and operation with both HX-1 and HX-2, with $\varepsilon_{\mathrm{HX},1} = \varepsilon_{\mathrm{HX},2} = 0.8$.
+
+The results presented in Table~\ref{tab:table6} are consistent with the conclusions of \citet{Christie2020}, 
+indicating that the most favorable operating conditions correspond to FLR configurations in which $\alpha \approx \alpha^{*}$ 
+and no threshold temperature is reached within the module. Under these conditions, high water-recovery ratios, $RR$, and the 
+lowest values of $\mathrm{SEC}_{\mathrm{th}}$ are obtained.
+
+Under DLR conditions, for which $\alpha < \alpha^{*}$, decreasing the flow-rate ratio $\alpha$ reduces the water-recovery
+ratio and increases the specific thermal energy consumption. This behavior makes the configuration unattractive,
+even when the second heat exchanger, HX-2, is used to recover part of the thermal energy from the retentate stream. 
+Conversely, under FLR conditions with $\alpha \gg \alpha^{*}$, the highest water-recovery ratios are achieved, 
+although at the expense of substantially higher energy consumption. Moreover, under these conditions, the inclusion
+of HX-2 produces no significant improvement in the overall performance of the DCMD system.
+
+Table~\ref{tab:table6} also shows that, as the salinity of the brackish feed water increases, operating with a 
+flow-rate ratio slightly greater than the critical value, $\alpha^{*}$, can improve the water-recovery ratio,
+$RR$, the distillate volumetric flow rate, $\dot{V}_{\mathrm{jwl}}$, and the thermal efficiency, $\eta_{\mathrm{th}}$, 
+while causing only a small increase in $\mathrm{SEC}_{\mathrm{th}}$.
 
 \subsubsection{Operating Regime Analysis}
 
 After characterizing the DCMD desalination system, its behavior under different
-operating modes is investigated. In all cases, the FLR configuration is adopted
-with $\dot{V}_l=\dot{V}_s=50~\mathrm{L\,min^{-1}}$.
+operating modes was investigated. Unless otherwise stated, the operating-mode
+simulations adopted the FLR configuration with
+$\dot{V}_{l}=\dot{V}_{s}=50~\mathrm{L\,min^{-1}}$. In addition, whenever no
+other condition is explicitly specified, both external heat exchangers, HX-1
+and HX-2, were employed with effectiveness values of
+$\varepsilon_{\mathrm{HX},1}=0.8$ and
+$\varepsilon_{\mathrm{HX},2}=0.8$, respectively.
 
-Table~\ref{tab:table6} summarizes the averaged theoretical maximum water-recovery
-factor, distillate mass flux, temperature-polarization coefficient, and DCMD
-module thermal-efficiency metrics, represented by $\mathrm{GOR}$ and
-$\mathrm{SEC}_{th}$. Three heat-recovery configurations were evaluated for two
-feed salinity levels and different feed and distillate flow rates.
+To assess whether the external heat exchangers improve the energy efficiency of
+the system, Figures~\ref{fig:batchgor1} and~\ref{fig:batchgor2} illustrate the
+dynamic behavior of $\mathrm{GOR}$ and $\mathrm{SEC}_{\mathrm{th}}$ under batch
+operation for two maximum allowable salt concentrations in the mixing tank:
+$C_{s,\max}=120~\mathrm{g_s\,L_{mix}^{-1}}$ and
+$C_{s,\max}=260~\mathrm{g_s\,L_{mix}^{-1}}$, respectively. The average values
+shown in these figures, $\overline{\mathrm{GOR}}$ and
+$\overline{\mathrm{SEC}}_{\mathrm{th}}$, were calculated over an 8~h operating
+period.
 
-\begin{table}[!htbp]
+\clearpage
+\begin{landscape}
+
+\begin{table}[p]
 \centering
-\caption{
-Influence of the operational conditions on the averaged DCMD module
-efficiency metrics under steady-state operation over 8~h.
-}
+\captionsetup{font=small,skip=3pt}
+\caption{Influence of the operational conditions on the averaged DCMD module
+efficiency metrics under steady-state operation over 8~h.}
 \label{tab:table6}
 
-\scriptsize
-\renewcommand{\arraystretch}{1.25}
-\setlength{\tabcolsep}{3pt}
+\setlength{\tabcolsep}{5.0pt}
+\renewcommand{\arraystretch}{0.92}
 
-\begin{tabularx}{\textwidth}{
-  @{}
-  >{\raggedright\arraybackslash}p{0.245\textwidth}
-  *{5}{>{\centering\arraybackslash}X}
-  @{}
+\begin{adjustbox}{
+    max totalsize={0.97\linewidth}{0.90\textheight},
+    center
+}
+\begin{tabular}{
+@{}
+>{\raggedright\arraybackslash}p{3.50cm}
+ccccccccc
+ccc
+ccc
+@{}
 }
 \toprule
 
-\textbf{Parameter}
+\makecell{\textbf{Flow condition}\\\textbf{[L/min]}}
+&
+$\boldsymbol{\alpha}$
+&
+$\boldsymbol{\alpha^{*}}$
+&
+\textbf{Oper.}
+&
+\makecell{$\boldsymbol{T_{\mathrm{thr}}}$\\$[^\circ\mathrm{C}]$}
+&
+\makecell{$\boldsymbol{Z_{\mathrm{thr}}}$\\$[\mathrm{m}]$}
+&
+$\boldsymbol{RR}$
+&
+\makecell{$\boldsymbol{\overline{\dot{V}}_{\mathrm{jwl}}}$\\
+$[\mathrm{L\,min^{-1}}]$}
+&
+\makecell{$\boldsymbol{\overline{\mathrm{TPC}}}$\\$[-]$}
+&
+\makecell{$\boldsymbol{\overline{\eta}_{\mathrm{th}}}$\\$[\%]$}
+&
+\multicolumn{3}{c}{$\boldsymbol{\overline{\mathrm{GOR}}}$ $[-]$}
 &
 \multicolumn{3}{c}{
-\textbf{$w_{NaCl,s}=3.5\%$}
-}
-&
-\multicolumn{2}{c}{
-\textbf{$w_{NaCl,s}=12.0\%$}
-}
+$\boldsymbol{\overline{\mathrm{SEC}}_{\mathrm{th}}}$
+$[\mathrm{kWh\,m^{-3}}]$}
 \\
 
-\cmidrule(lr){2-4}
-\cmidrule(lr){5-6}
+\cmidrule(lr){11-13}
+\cmidrule(lr){14-16}
 
 &
-\shortstack{
-\textbf{Condition 1}\\
-$\dot{V}_l=30$\\
-$\dot{V}_s=80$
-}
 &
-\shortstack{
-\textbf{Condition 2}\\
-$\dot{V}_l\approx44$\\
-$\dot{V}_s=50$
-}
 &
-\shortstack{
-\textbf{Condition 3}\\
-$\dot{V}_l=50$\\
-$\dot{V}_s=50$
-}
 &
-\shortstack{
-\textbf{Condition 4}\\
-$\dot{V}_l\approx42$\\
-$\dot{V}_s=50$
-}
 &
-\shortstack{
-\textbf{Condition 5}\\
-$\dot{V}_l=80$\\
-$\dot{V}_s=80$
-}
+&
+&
+&
+&
+&
+\makecell{$\varepsilon_{\mathrm{HX},1}=0.0$\\
+$\varepsilon_{\mathrm{HX},2}=0.0$}
+&
+\makecell{$\varepsilon_{\mathrm{HX},1}=0.8$\\
+$\varepsilon_{\mathrm{HX},2}=0.0$}
+&
+\makecell{$\varepsilon_{\mathrm{HX},1}=0.8$\\
+$\varepsilon_{\mathrm{HX},2}=0.8$}
+&
+\makecell{$\varepsilon_{\mathrm{HX},1}=0.0$\\
+$\varepsilon_{\mathrm{HX},2}=0.0$}
+&
+\makecell{$\varepsilon_{\mathrm{HX},1}=0.8$\\
+$\varepsilon_{\mathrm{HX},2}=0.0$}
+&
+\makecell{$\varepsilon_{\mathrm{HX},1}=0.8$\\
+$\varepsilon_{\mathrm{HX},2}=0.8$}
 \\
 
 \midrule
+\multicolumn{16}{c}{
+$\boldsymbol{w_{\mathrm{NaCl},s}=3.5\%
+\approx 35~\mathrm{g_s\,L_{mix}^{-1}}}$}
+\\
+\midrule
 
-Flow-rate relation
-&
-$\dot{V}_l<\dot{V}_s$
-&
-$\dot{V}_l<\dot{V}_s$
-&
-$\dot{V}_l=\dot{V}_s$
-&
-$\dot{V}_l<\dot{V}_s$
-&
-$\dot{V}_l=\dot{V}_s$
+$\dot{V}_{l}=30<\dot{V}_{s}=80$
+& 0.38 & 0.88 & DLR & $80.0^{a}$ & 0.63 & 2.5 & 2.6 & 0.73 & 73
+& 0.28 & 0.41 & 1.4 & 2500 & 1700 & 480
 \\
 
-$\alpha$
-&
-0.38
-&
-\textbf{0.88}
-&
-1.00
-&
-\textbf{0.74}
-&
-0.88
+$\dot{V}_{l}=30<\dot{V}_{s}=50$
+& 0.60 & 0.88 & DLR & $80.0^{a}$ & 0.98 & 3.7 & 2.5 & 0.62 & 69
+& 0.43 & 0.90 & 2.4 & 1600 & 780 & 290
 \\
 
-$\alpha^*$
-&
-0.88
-&
-\textbf{0.88}
-&
-0.88
-&
-\textbf{0.74}
-&
-0.74
+$\dot{V}_{l}=50<\dot{V}_{s}=80$
+& 0.63 & 0.88 & DLR & --- & --- & 4.0 & 4.2 & 0.50 & 71
+& 0.45 & 0.97 & 2.5 & 1600 & 720 & 280
 \\
 
-Operating regime
-&
-DLR
-&
-\textbf{FLR}
-&
-FLR
-&
-\textbf{FLR}
-&
-FLR
+\textbf{$\dot{V}_{l}\approx44<\dot{V}_{s}=50$}
+& \textbf{0.88} & \textbf{0.88} & \textbf{FLR}
+& \textbf{---} & \textbf{---} & \textbf{5.0} & \textbf{3.3}
+& \textbf{0.56} & \textbf{67}
+& \textbf{0.56} & \textbf{1.9} & \textbf{3.3}
+& \textbf{1200} & \textbf{360} & \textbf{210}
 \\
 
-$T_{thr}$ [$^\circ$C]
-&
-80.0
-&
----
-&
----
-&
----
-&
----
+$\dot{V}_{l}=\dot{V}_{s}=30$
+& 1.0 & 0.88 & FLR & --- & --- & 5.3 & 2.1 & 0.61 & 54
+& 0.60 & 2.1 & 2.6 & 1200 & 330 & 270
 \\
 
-$Z_{thr}$ [m]
-&
-0.63
-&
----
-&
----
-&
----
-&
----
+\textbf{$\dot{V}_{l}=\dot{V}_{s}=50$}
+& \textbf{1.0} & \textbf{0.88} & \textbf{FLR}
+& \textbf{---} & \textbf{---} & \textbf{5.2} & \textbf{3.4}
+& \textbf{0.59} & \textbf{66}
+& \textbf{0.58} & \textbf{1.8} & \textbf{2.5}
+& \textbf{1200} & \textbf{380} & \textbf{270}
 \\
 
-$RR$ [\%]
-&
-2.5
-&
-\textbf{5.0}
-&
-5.2
-&
-\textbf{2.2}
-&
-2.9
+$\dot{V}_{l}=\dot{V}_{s}=80$
+& 1.0 & 0.88 & FLR & --- & --- & 4.9 & 5.2 & 0.58 & 67
+& 0.55 & 1.5 & 2.4 & 1300 & 460 & 290
 \\
 
-$\dot{V}_{well}$ [L/min]
-&
-2.6
-&
-\textbf{3.3}
-&
-3.4
-&
-\textbf{1.7}
-&
-3.6
+$\dot{V}_{l}=80>\dot{V}_{s}=50$
+& 1.6 & 0.88 & FLR & --- & --- & 5.3 & 3.5 & 0.66 & 62
+& 0.60 & 1.1 & 1.2 & 1200 & 620 & 580
 \\
 
-TPC [-]
-&
-0.73
-&
-\textbf{0.56}
-&
-0.59
-&
-\textbf{0.72}
-&
-0.68
+$\dot{V}_{l}=50>\dot{V}_{s}=30$
+& 1.7 & 0.88 & FLR & --- & --- & 5.5 & 2.2 & 0.69 & 62
+& 0.62 & 1.1 & 1.2 & 1100 & 600 & 590
 \\
 
-$\eta_{th}$ [\%]
-&
-73
-&
-\textbf{67}
-&
-66
-&
-\textbf{37}
-&
-50
+$\dot{V}_{l}=80>\dot{V}_{s}=30$
+& 2.7 & 0.88 & FLR & $25.3^{b}$ & 0.033 & 5.6 & 2.2 & 0.72 & 61
+& 0.63 & 0.89 & 0.89 & 1100 & 780 & 780
 \\
 
 \midrule
+\multicolumn{16}{c}{
+$\boldsymbol{w_{\mathrm{NaCl},s}=12.0\%
+\approx 260~\mathrm{g_s\,L_{mix}^{-1}}}$}
+\\
+\midrule
 
-\multicolumn{6}{@{}l}{
-\textit{$\mathrm{GOR}/\mathrm{SEC}_{th}$ values}
-}
+$\dot{V}_{l}=30<\dot{V}_{s}=80$
+& 0.33 & 0.74 & DLR & $79.6^{a}$ & 0.41 & 0.57 & 0.69 & 0.87 & 20
+& 0.076 & 0.11 & 0.39 & 8900 & 6200 & 1800
 \\
 
-No heat recovery:
-$\varepsilon_{HX1}=\varepsilon_{HX2}=0$
-&
-0.28 / 2.5
-&
-\textbf{0.56 / 1.2}
-&
-0.58 / 1.2
-&
-\textbf{0.30 / 2.3}
-&
-0.40 / 1.7
+$\dot{V}_{l}=30<\dot{V}_{s}=50$
+& 0.53 & 0.74 & DLR & $79.0^{a}$ & 0.63 & 0.92 & 0.70 & 0.83 & 20
+& 0.12 & 0.24 & 0.63 & 5500 & 2800 & 1100
 \\
 
-HX-1 only:
-$\varepsilon_{HX1}=0.8$,
-$\varepsilon_{HX2}=0$
-&
-0.41 / 1.7
-&
-\textbf{1.9 / 0.36}
-&
-1.8 / 0.38
-&
-\textbf{0.88 / 0.79}
-&
-0.96 / 0.72
+$\dot{V}_{l}=50<\dot{V}_{s}=80$
+& 0.55 & 0.74 & DLR & --- & --- & 1.9 & 2.3 & 0.73 & 42
+& 0.26 & 0.54 & 1.4 & 2700 & 1300 & 500
 \\
 
-HX-1 and HX-2:
-$\varepsilon_{HX1}=\varepsilon_{HX2}=0.8$
-&
-1.4 / 0.48
-&
-\textbf{3.3 / 0.21}
-&
-2.5 / 0.27
-&
-\textbf{1.6 / 0.43}
-&
-1.5 / 0.46
+\textbf{$\dot{V}_{l}\approx42<\dot{V}_{s}=50$}
+& \textbf{0.74} & \textbf{0.74} & \textbf{FLR}
+& \textbf{---} & \textbf{---} & \textbf{2.2} & \textbf{1.7}
+& \textbf{0.72} & \textbf{37}
+& \textbf{0.30} & \textbf{0.88} & \textbf{1.6}
+& \textbf{2300} & \textbf{790} & \textbf{430}
+\\
+
+$\dot{V}_{l}=\dot{V}_{s}=30$
+& 0.88 & 0.74 & FLR & --- & --- & 1.9 & 0.87 & 0.75 & 29
+& 0.26 & 0.78 & 0.99 & 2700 & 890 & 710
+\\
+
+$\dot{V}_{l}=\dot{V}_{s}=50$
+& 0.88 & 0.74 & FLR & --- & --- & 2.6 & 2.0 & 0.71 & 42
+& 0.36 & 0.98 & 1.4 & 1900 & 710 & 510
+\\
+
+\textbf{$\dot{V}_{l}=\dot{V}_{s}=80$}
+& \textbf{0.88} & \textbf{0.74} & \textbf{FLR}
+& \textbf{---} & \textbf{---} & \textbf{2.9} & \textbf{3.6}
+& \textbf{0.68} & \textbf{50}
+& \textbf{0.40} & \textbf{0.96} & \textbf{1.5}
+& \textbf{1700} & \textbf{720} & \textbf{460}
+\\
+
+$\dot{V}_{l}=80>\dot{V}_{s}=50$
+& 1.4 & 0.74 & FLR & --- & --- & 3.1 & 2.3 & 0.74 & 45
+& 0.42 & 0.74 & 0.81 & 1600 & 940 & 860
+\\
+
+$\dot{V}_{l}=50>\dot{V}_{s}=30$
+& 1.5 & 0.74 & FLR & $30.9^{b}$ & 0.44 & 2.8 & 1.3 & 0.80 & 39
+& 0.38 & 0.66 & 0.69 & 1800 & 1100 & 1000
+\\
+
+$\dot{V}_{l}=80>\dot{V}_{s}=30$
+& 2.3 & 0.74 & FLR & $29.8^{b}$ & 0.55 & 3.0 & 1.4 & 0.83 & 40
+& 0.41 & 0.56 & 0.57 & 1700 & 1300 & 1200
 \\
 
 \bottomrule
-\end{tabularx}
+\end{tabular}
+\end{adjustbox}
 
-\smallskip
+\vspace{2pt}
 
-\begin{minipage}{\textwidth}
-\scriptsize
-\noindent
-The values in the three final rows are presented as
-$\mathrm{GOR}/\mathrm{SEC}_{th}$, with
-$\mathrm{SEC}_{th}$ expressed in kWh/L.
-
-\noindent
-(a) Feed-side threshold temperature, $T_{thres,s}$.
-
-\noindent
-(b) Distillate-side threshold temperature, $T_{thres,l}$.
+\begin{minipage}{0.98\linewidth}
+\footnotesize
+$^{a}$ Feed-side threshold temperature, $T_{\mathrm{thres},s}$.
+\qquad
+$^{b}$ Distillate-side threshold temperature, $T_{\mathrm{thres},l}$.
 \end{minipage}
 
 \end{table}
 
-The results show that heat recovery improves the energetic performance under all
-the evaluated conditions. For $w_{NaCl,s}=3.5\%$, operation close to the critical
-flow-rate ratio, $\alpha=\alpha^*=0.88$, reaches
-$\mathrm{GOR}=3.3$ and
-$\mathrm{SEC}_{th}=0.21~\mathrm{kWh\,L^{-1}}$
-when both heat exchangers operate with an effectiveness of 0.8.
+\end{landscape}
+\clearpage
 
-Increasing the feed salinity to $w_{NaCl,s}=12.0\%$ reduces both productivity
-and thermal efficiency because the vapor-pressure driving force decreases.
-Nevertheless, the use of both heat exchangers still provides the highest
-$\mathrm{GOR}$ and the lowest $\mathrm{SEC}_{th}$ among the evaluated
-heat-recovery configurations.
 
-Figures~\ref{fig:batchgor1} and \ref{fig:batchgor2} illustrate the dynamic
-behavior of $\mathrm{GOR}$ and $\mathrm{SEC}_{th}$ under batch operation.
-The two maximum allowable salt concentrations considered in the mixing tank
-are $C_{s,\max}=120~\mathrm{g_s\,L_{mix}^{-1}}$ and
-$C_{s,\max}=260~\mathrm{g_s\,L_{mix}^{-1}}$.The average values indicated in these figures were calculated over an operating
-period of 8~h.
 
-% ----------------------------------------------------------------
-% Figures 8 and 9: full text width
-% ----------------------------------------------------------------
 
 \begin{figure}[!htbp]
   \centering
   \includegraphics[
-    width=1\linewidth,
+    width=\linewidth,
     keepaspectratio
   ]{IMAGENS/8.PNG}
 
   \caption{Evolution of the instantaneous
   (a)~$\mathrm{GOR}$ and
-  (b)~$\mathrm{SEC}_{th}$ for
+  (b)~$\mathrm{SEC}_{\mathrm{th}}$ for
   $C_{s,\max}=120~\mathrm{g_s\,L_{mix}^{-1}}$
   under batch operation.}
   \label{fig:batchgor1}
@@ -2790,30 +2856,54 @@ period of 8~h.
 \begin{figure}[!htbp]
   \centering
   \includegraphics[
-    width=1\linewidth,
+    width=\linewidth,
     keepaspectratio
   ]{IMAGENS/9.PNG}
 
   \caption{Evolution of the instantaneous
   (a)~$\mathrm{GOR}$ and
-  (b)~$\mathrm{SEC}_{th}$ for
+  (b)~$\mathrm{SEC}_{\mathrm{th}}$ for
   $C_{s,\max}=260~\mathrm{g_s\,L_{mix}^{-1}}$
   under batch operation.}
   \label{fig:batchgor2}
 \end{figure}
 
-Figure~\ref{fig:modes} illustrates the temporal evolution of the main DCMD
-system parameters under the different desalination-system operating modes:
-batch, semi-batch, volume control, continuous operation, and steady-state
-operation. The evaluated parameters are the salt concentration in the mixing
-tank, $C_{s,mix}$; the volumetric flow rate of produced distillate,
-$\dot{V}_{jwl}$; the mixture volume in the mixing tank, $V_{mix}$; the mixture
-temperature, $T_{mix}$; the rejection fraction, $\lambda$; and the volumetric
-flow rate supplied by the brackish-water well, $\dot{V}_{well}$.
+Figures~\ref{fig:batchgor1} and~\ref{fig:batchgor2} show that the improvement in
+thermal efficiency obtained by using HX-2, represented by an increase in
+$\overline{\mathrm{GOR}}$ and a reduction in
+$\overline{\mathrm{SEC}}_{\mathrm{th}}$, is associated with the overshoot in the
+instantaneous $\mathrm{GOR}$ and the undershoot in the instantaneous
+$\mathrm{SEC}_{\mathrm{th}}$. These effects occur while the mixing tank is being
+emptied and refilled during each cycle of the batch operating mode, as well as
+in the other cyclic operating modes.
 
-% ----------------------------------------------------------------
-% Figure 10: first part of Figure "modes"
-% ----------------------------------------------------------------
+This behavior can also be observed in Figure~\ref{fig:modes}, which presents the
+temporal evolution of the main DCMD-system parameters under the batch,
+semi-batch, volume-control (V-Control), continuous, and steady-state operating
+modes. The evaluated parameters are the salt concentration in the mixing tank,
+$C_{s,\mathrm{mix}}$; the volumetric flow rate of the produced distillate,
+$\dot{V}_{\mathrm{jwl}}$; the mixture volume in the mixing tank,
+$V_{\mathrm{mix}}$; the mixture temperature, $T_{\mathrm{mix}}$; the rejection
+fraction, $\lambda$; and the volumetric flow rate supplied by the brackish-water
+well, $\dot{V}_{\mathrm{well}}$.
+
+Several characteristics of the operating modes can be identified from these
+results. Under batch operation, the mixture salinity varies between the
+brackish-water well salinity,
+$C_{s,\mathrm{well}}\approx35~\mathrm{g_s\,L_{mix}^{-1}}$, and the specified
+maximum salinity,
+$C_{s,\max}=120~\mathrm{g_s\,L_{mix}^{-1}}$, during each cycle as distillate is
+produced, as shown in Figure~\ref{fig:modes}(a). A similar variation is observed
+for the produced-distillate flow rate, $\dot{V}_{\mathrm{jwl}}$, which decreases
+from approximately $2.596$ to $2.256~\mathrm{L\,min^{-1}}$ as the mixture
+salinity increases, as shown in Figure~\ref{fig:modes}(b).
+
+The semi-batch mode exhibits similar behavior, although with a considerably
+lower cycling frequency than the batch mode. In the V-Control mode, the salinity
+and distillate flow rate also oscillate between the aforementioned limits.
+However, intermediate oscillations occur within each main cycle because the
+mixing-tank volume is constrained between the prescribed minimum and maximum
+values of 60 and 140~L, respectively.
 
 \begin{figure}[!htbp]
   \centering
@@ -2826,13 +2916,9 @@ flow rate supplied by the brackish-water well, $\dot{V}_{well}$.
   parameters under different operating modes for
   $C_{s,\max}=120~\mathrm{g_s\,L_{mix}^{-1}}$:
   (a)~$C_{s,\mathrm{mix}}$ and
-  (b)~$\dot{V}_{jwl}$.}
+  (b)~$\dot{V}_{\mathrm{jwl}}$.}
   \label{fig:modes}
 \end{figure}
-
-% ----------------------------------------------------------------
-% Figure 11: continuation of the same figure number
-% ----------------------------------------------------------------
 
 \begin{figure}[!htbp]
   \ContinuedFloat
@@ -2844,15 +2930,10 @@ flow rate supplied by the brackish-water well, $\dot{V}_{well}$.
 
   \caption[]{Dynamic evolution of the instantaneous desalination-system
   parameters under different operating modes for
-  $C_{s,\max}=120~\mathrm{g_s\,L_{mix}^{-1}}$,
-  continued:
+  $C_{s,\max}=120~\mathrm{g_s\,L_{mix}^{-1}}$, continued:
   (c)~$V_{\mathrm{mix}}$ and
   (d)~$T_{\mathrm{mix}}$.}
 \end{figure}
-
-% ----------------------------------------------------------------
-% Figure 12: second continuation
-% ----------------------------------------------------------------
 
 \begin{figure}[!htbp]
   \ContinuedFloat
@@ -2864,23 +2945,46 @@ flow rate supplied by the brackish-water well, $\dot{V}_{well}$.
 
   \caption[]{Dynamic evolution of the instantaneous desalination-system
   parameters under different operating modes for
-  $C_{s,\max}=120~\mathrm{g_s\,L_{mix}^{-1}}$,
-  continued:
+  $C_{s,\max}=120~\mathrm{g_s\,L_{mix}^{-1}}$, continued:
   (e)~$\lambda$ and
   (f)~$\dot{V}_{\mathrm{well}}$.}
 \end{figure}
 
-According to Figure~\ref{fig:modes}, the cycle duration is approximately
-1789~s ($\approx30$~min) for batch operation, 4800~s
-($\approx1$~h~20~min) for volume-control operation, and 6090~s
-($\approx1$~h~41~min) for semi-batch operation.To identify the most appropriate operating mode for the DCMD desalination
-system, Figures~\ref{fig:sec} and \ref{fig:rr} compare the average specific
-thermal energy consumption, $\mathrm{SEC}_{th}$, and the water recovery ratio,
+The cycle duration of each transient operating mode can be identified by the
+sharp decrease in the mixing-tank volume shown in Figure~\ref{fig:modes}(c),
+which occurs when the solution is discharged from the tank, or by the abrupt
+increase in the rejection fraction shown in Figure~\ref{fig:modes}(e). These
+events are accompanied by corresponding variations in the mixture temperature,
+Figure~\ref{fig:modes}(d), and in the brackish-water flow rate,
+Figure~\ref{fig:modes}(f). The cycle duration is approximately 1789~s
+($\approx30$~min) for batch operation, 4800~s
+($\approx1$~h~20~min) for V-Control operation, and 6090~s
+($\approx1$~h~41~min) for semi-batch operation.
+
+Although the system is emptied and subsequently refilled with fresh brackish
+water from the well at $T_{\mathrm{well}}=25~^\circ\mathrm{C}$, the temperature
+of the mixture in the tank does not return to this value during each cycle
+because of the thermal inertia of the system. In the procedure adopted here,
+emptying and refilling occur sequentially: the tank is continuously emptied
+until a predefined minimum volume is reached and is then continuously refilled
+to the initial volume, $V_{\mathrm{mix},0}=100~\mathrm{L}$.
+
+To identify the most appropriate operating mode from the perspectives of energy
+efficiency and water recovery, Figures~\ref{fig:sec} and~\ref{fig:rr} compare
+the average specific thermal energy consumption,
+$\overline{\mathrm{SEC}}_{\mathrm{th}}$, and the water recovery ratio,
 $\mathrm{RR}$, respectively.
 
-% ----------------------------------------------------------------
-% Figure 13: full text width
-% ----------------------------------------------------------------
+The black bars with gradient and solid fills represent the scenarios with
+maximum salt concentrations of
+$C_{s,\max}=120~\mathrm{g_s\,L_{mix}^{-1}}$ and
+$C_{s,\max}=260~\mathrm{g_s\,L_{mix}^{-1}}$, respectively. Thus, under the
+transient batch, V-Control, and semi-batch modes, the salinity in the mixing tank
+varies from the brackish-water well salinity to the specified value of
+$C_{s,\max}$. In the steady-state modes, operation at a prescribed value of
+$C_{s,\max}$ requires the final brine or the brackish-water/brine stream supplied
+to the system to have the same salinity; consequently,
+$C_{s,\mathrm{oper}}=C_{s,\max}$.
 
 \begin{figure}[!htbp]
   \centering
@@ -2890,14 +2994,27 @@ $\mathrm{RR}$, respectively.
   ]{IMAGENS/13.PNG}
 
   \caption{Effect of the system operating mode on the average specific thermal
-  energy consumption, $\mathrm{SEC}_{th}$, for different maximum mixture
-  salinities.}
+  energy consumption, $\overline{\mathrm{SEC}}_{\mathrm{th}}$, for different
+  mixture salinities.}
   \label{fig:sec}
 \end{figure}
 
-% ----------------------------------------------------------------
-% Figure 14: full text width
-% ----------------------------------------------------------------
+The blue bars shown for the continuous/steady-state cases represent scenarios
+in which $C_{s,\mathrm{oper}}=C_{s,\max}$, with salinities of
+66 and $97~\mathrm{g_s\,L_{mix}^{-1}}$. These values correspond to the average
+system salinities under batch operation. In steady-state operation, because the
+brine leaving the DCMD module is continuously discharged, a saline stream with
+a prescribed concentration is continuously supplied to the system at the
+predefined flow rate of $50~\mathrm{L\,min^{-1}}$. The concentrations represented
+by the green bars are 66 and $97~\mathrm{g_s\,L_{mix}^{-1}}$, whereas those
+represented by the black bars are 120 and
+$260~\mathrm{g_s\,L_{mix}^{-1}}$.
+
+The red bars represent two salinity-control scenarios in which the concentration
+of the solution in the mixing tank is constrained to vary from 40 to
+$97~\mathrm{g_s\,L_{mix}^{-1}}$ and from 66 to
+$120~\mathrm{g_s\,L_{mix}^{-1}}$ for the gradient-filled and solid-filled bars,
+respectively.
 
 \begin{figure}[!htbp]
   \centering
@@ -2907,25 +3024,46 @@ $\mathrm{RR}$, respectively.
   ]{IMAGENS/14.PNG}
 
   \caption{Effect of the system operating mode on the water recovery ratio,
-  $\mathrm{RR}$, for different maximum mixture salinities.}
+  $\mathrm{RR}$, for different mixture salinities.}
   \label{fig:rr}
 \end{figure}
 
-Overall, these results indicate that a balance must be sought between specific
-energy consumption and water recovery, since a trade-off exists between these
-metrics for the same maximum operating salinity. Regarding energy consumption,
-the batch mode presents the best performance, followed by the semi-batch,
-steady-state, and continuous modes, in agreement with the literature
+Overall, these results show that a balance must be sought between specific
+thermal energy consumption and water recovery because, for a given maximum
+operating salinity, a trade-off exists between these metrics. In other words,
+low specific thermal energy consumption and high water recovery cannot
+generally be achieved simultaneously.
+
+For the same limiting mixture salinity, batch operation provides the lowest
+energy consumption, followed by the semi-batch, steady-state, and continuous
+modes, in agreement with the literature
 \citep{SwaminathanLienhard2018}. Regarding water recovery,
-Figure~\ref{fig:rr} indicates that semi-batch operation provides the highest
-recovery ratio, followed by the volume-control and batch modes.
+Figure~\ref{fig:rr} shows that the semi-batch mode provides the highest recovery
+ratio, followed by the V-Control and batch modes. Steady-state operation is
+unfavorable from this perspective unless the system is of the type studied by
+\citet{Sampaio2022}, for which complete rejection of the retentate leaving the
+desalination module is acceptable.
 
-Figure~\ref{fig:voldist} compares the volume of distillate produced under each
-operating mode over an 8~h operating period.
+The performance of the V-Control mode at an intermediate salt concentration is
+particularly noteworthy. For
+$C_{s,\max}=120~\mathrm{g_s\,L_{mix}^{-1}}$, this mode produces slightly more
+distillate per unit volume of brackish well water than the semi-batch mode,
+with recovery values of
+$76.4~\mathrm{L_{dist}\,L_{well}^{-1}}$ and
+$76.2~\mathrm{L_{dist}\,L_{well}^{-1}}$, respectively, at the same average
+specific thermal energy consumption,
+$\overline{\mathrm{SEC}}_{\mathrm{th}}=0.40~\mathrm{kWh\,L^{-1}}$.
+However, this difference may be negligible because the energy requirements
+associated with process control and intermittent pumping were not included in
+the present analysis.
 
-% ----------------------------------------------------------------
-% Figure 15: full text width
-% ----------------------------------------------------------------
+Figure~\ref{fig:rr} also shows that operating the desalination unit continuously
+at a salinity equal to the average salinity of the batch mode, represented by
+the blue bars, can result in lower energy consumption than batch operation, but
+at the expense of a lower water recovery ratio.
+
+Figure~\ref{fig:voldist} compares the volume of distillate produced by each
+operating mode over an 8~h period.
 
 \begin{figure}[!htbp]
   \centering
@@ -2935,21 +3073,23 @@ operating mode over an 8~h operating period.
   ]{IMAGENS/15.PNG}
 
   \caption{Effect of the system operating mode on the volume of distillate
-  produced over 8~h for different maximum mixture salinities.}
+  produced over 8~h for different mixture salinities.}
   \label{fig:voldist}
 \end{figure}
 
-For the lower salinity level, the desalination system can produce approximately
-1{,}200~L of distillate over 8~h under any of the evaluated operating modes.
-Increasing salinity reduces distillate production, particularly under the
-continuous and steady-state modes, for which approximately 750~L of distillate
-is produced.
+At the lower salinity level, the desalination system can produce up to
+approximately 1{,}200~L of distillate over 8~h under any of the evaluated
+operating modes. At the higher salinity level, distillate production decreases,
+particularly under the continuous and steady-state modes, for which only
+approximately 750~L is produced.
 
-Therefore, for applications in regions subjected to seasonal water stress,
-such as the semi-arid region of northeastern Brazil, semi-batch operation may
-be the preferred alternative for brackish-water desalination because it provides
-the best compromise when minimizing well-water consumption is the main
-objective.
+Therefore, for implementation in regions subject to seasonal water stress, such
+as the semi-arid region of northeastern Brazil, the results indicate that
+semi-batch operation may be the preferred alternative for brackish-water
+desalination when the primary objective is to minimize the consumption of
+brackish well water. Nevertheless, the energy costs associated with pumps,
+control devices, and other accessories required by each operating mode should
+be included in a broader thermoeconomic analysis.
 
 % ----------------------------------------------------------------
 \section{Conclusions}
@@ -2983,10 +3123,6 @@ indicate that the semi-batch mode could be the preferred choice for brackish wat
 The selection of an operating mode must consequently be guided by site-specific
 information, such as where the system is to be implemented and what the local availability
 of energy and brackish water salinity are.
-
-Extension to other desalination MD methods, such as AGMD and V-AGMD, is currently under
-development, in order to simulate the entire experimental TRL-6 desalination unit installed
-in the LabMEMS/UFRJ.
 
 % ----------------------------------------------------------------
 \bibliographystyle{abbrvnat}

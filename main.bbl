@@ -1,4 +1,4 @@
-\begin{thebibliography}{43}
+\begin{thebibliography}{44}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -101,6 +101,14 @@ C.~Gostoli and G.~C. Sarti.
 \newblock Low temperature distillation through hydrophobic membrane.
 \newblock \emph{Separation Science and Technology}, 22\penalty0
   (2--3):\penalty0 855--872, 1998.
+
+\bibitem[Guan et~al.(2012)Guan, Wang, Wicaksana, Yang, and Fane]{Guan2012}
+G.~Guan, R.~Wang, F.~Wicaksana, X.~Yang, and A.~G. Fane.
+\newblock Analysis of membrane distillation crystallization system for high
+  salinity brine treatment with zero discharge using {A}spen flowsheet
+  simulation.
+\newblock \emph{Industrial \& Engineering Chemistry Research}, 51:\penalty0
+  13405--13413, 2012.
 
 \bibitem[Guan et~al.(2014)Guan, Yang, Wang, Field, and Fane]{Guan2014}
 G.~Guan, X.~Yang, R.~Wang, R.~Field, and A.~G. Fane.
@@ -255,11 +263,11 @@ K.~Y. Wang, S.~W. Foo, and T.~S. Chung.
 \newblock \emph{Industrial \& Engineering Chemistry Research}, 48:\penalty0
   4474--4483, 2009.
 
-\bibitem[Yang et~al.(2011)Yang, Wang, Shi, Fane, and Debowski]{Yang2011}
-X.~Yang, R.~Wang, L.~Shi, A.~G. Fane, and M.~Debowski.
-\newblock Performance improvement of {PVDF} hollow fiber-based membrane
-  distillation process.
-\newblock \emph{Journal of Membrane Science}, 369:\penalty0 437--447, 2011.
+\bibitem[Wirth and Cabassud(2002)]{Wirth2002}
+D.~Wirth and C.~Cabassud.
+\newblock Water desalination using membrane distillation: comparison between
+  inside/out and outside/in permeation.
+\newblock \emph{Desalination}, 147\penalty0 (1--3):\penalty0 139--145, 2002.
 
 \bibitem[Yao et~al.(2013)Yao, Qin, and Yuan]{Yao2013}
 K.~Yao, Y.~Qin, and Y.~Yuan.
