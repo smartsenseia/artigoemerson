@@ -1,4 +1,4 @@
-\begin{thebibliography}{44}
+\begin{thebibliography}{45}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -268,6 +268,12 @@ D.~Wirth and C.~Cabassud.
 \newblock Water desalination using membrane distillation: comparison between
   inside/out and outside/in permeation.
 \newblock \emph{Desalination}, 147\penalty0 (1--3):\penalty0 139--145, 2002.
+
+\bibitem[Yang et~al.(2011)Yang, Wang, Shi, Fane, and Debowski]{Yang2011}
+X.~Yang, R.~Wang, L.~Shi, A.~G. Fane, and M.~Debowski.
+\newblock Performance improvement of {PVDF} hollow fiber-based membrane
+  distillation process.
+\newblock \emph{Journal of Membrane Science}, 369:\penalty0 437--447, 2011.
 
 \bibitem[Yao et~al.(2013)Yao, Qin, and Yuan]{Yao2013}
 K.~Yao, Y.~Qin, and Y.~Yuan.
